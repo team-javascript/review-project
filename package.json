@@ -19,5 +19,8 @@
   "homepage": "https://github.com/jon-cunicella/review-project#readme",
   "devDependencies": {
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

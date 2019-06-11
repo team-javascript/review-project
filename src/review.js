@@ -25,4 +25,4 @@ class Review {
   }
 }
 
-module.export = Review;
+module.exports = Review;

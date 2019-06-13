@@ -1,8 +1,8 @@
 const Review = require("./review");
 
 class ReviewRepository {
-  constructor(reviewList = {}) {
-    this._reviewList = reviewList;
+  constructor() {
+    this._reviewList = {};
   }
 
   get reviews() {
@@ -11,7 +11,7 @@ class ReviewRepository {
 
   addReview(review) {
     if (review.constructor !== Review) {
-      throw new Error("Only reviews may be added to a ReviewRepo");
+      throw new Error("Only reviews may be added!");
     }
     this._reviewList[review.id] = review;
   }

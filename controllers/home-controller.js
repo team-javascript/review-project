@@ -3,3 +3,5 @@ class HomeController {
     res.redirect("/review-collection");
   }
 }
+
+module.exports = HomeController;

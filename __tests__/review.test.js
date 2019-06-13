@@ -1,4 +1,4 @@
-const Review = require("../src/review");
+const Review = require("../models/Reviews/review");
 
 describe("Review", () => {
   test("Should return ID", () => {

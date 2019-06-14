@@ -21,7 +21,9 @@ describe("Books router/controller", () => {
       .get("/reviews")
       .then(response => {
         console.log(response);
-        expect(response.text).toBe(``);
+        expect(response.text).toBe(
+          '<!DOCTYPE html>\n<html lang="en">\n\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <meta http-equiv="X-UA-Compatible" content="ie=edge">\n  <link rel=\'stylesheet\' href=\'/stylesheets/style.css\' />\n  <title>Welp...</title>\n</head>\n\n<body>\n  <div class="wrapper">\n    <header class="main__header">\n      <h1>Welp...</h1>\n    </header>\n    <main>\n  <div class="container">\n    <ul class="review-cards">\n      <li class="review-card">\n        <figure><img src="test URL" alt="Test Title"></figure>\n        <a class="review-card__link" href="/reviews/5">Test Title</a>\n      </li>\n    </ul>\n    <nav>\n      <ul>\n        <li><a href=""></a></li>\n        <li><a href="/views/reviews.hbs">Reviews</a></li>\n      </ul>\n    </nav>\n  </div>\n  <a href="/">Back to Home</a>\n</main>\n    <footer class="footer">\n      <small class="footer__copy">&copy; Aquisitions Inc, 2019</small>\n    </footer>\n  </div>\n</body>'
+        );
         done();
       });
   });

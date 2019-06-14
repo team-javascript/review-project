@@ -2,17 +2,18 @@ const Route = require("../../../src/Server/routes/home-router");
 const express = require("express");
 const request = require("supertest");
 
-const app = require("../../../../app");
+const app = require("../../../app");
 
 describe("Router tests", () => {
-  test("Should return a redirect", () => {
+  test("Should return a redirect", done => {
     //Arrange
-    const app = new express();
-    request(app);
-    //Act
-    request.get("/reviews");
-
-    //Assert
-    expect("");
+    request(app)
+      //Act
+      .get("/")
+      .then(response => {
+        //Assert
+        expect(response.statusCode).toBe(302);
+        done();
+      });
   });
 });

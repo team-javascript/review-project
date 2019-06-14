@@ -14,4 +14,15 @@ describe("Books router/controller", () => {
         done();
       });
   });
+
+  test("Should render a list of reviews for each provided review when route is '/reviews' ", done => {
+    //Arrange
+    request(app)
+      .get("/reviews")
+      .then(response => {
+        console.log(response);
+        expect(response.text).toBe(``);
+        done();
+      });
+  });
 });

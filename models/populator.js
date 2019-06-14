@@ -1,5 +1,5 @@
-const ReviewRepository = require("../models/Reviews/review-repository");
-const Review = require("./reviews/review");
+const ReviewRepository = require("./Reviews/review-repository");
+const Review = require("./Reviews/review");
 
 const repo = new ReviewRepository();
 

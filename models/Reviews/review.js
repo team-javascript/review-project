@@ -1,7 +1,7 @@
 //app factory function
 
 class Review {
-  constructor(id, title, imageUrl, reviewCategory, content) {
+  constructor(id, title, imageUrl, reviewCategory = {}, content) {
     this._id = id;
     this._title = title;
     this._imageUrl = imageUrl;

@@ -15,12 +15,13 @@ class ReviewController {
 
   static addReview(req, res, next) {
     // const id = req.body.id;
+    const id = req.body.id;
     const title = req.body.title;
     const imageUrl = req.body.imageUrl;
     const reviewCategory = req.body.reviewCategory;
     const content = req.body.content;
 
-    data.addReview(new Review(title, imageUrl, reviewCategory, content));
+    data.addReview(new Review(id, title, imageUrl, reviewCategory, content));
 
     res.redirect("/reviews");
     // const reviews = newReview.addReview(id);

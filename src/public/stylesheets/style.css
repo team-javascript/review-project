@@ -4,20 +4,63 @@
     margin: 0;
 }
 
-/* header */
-
-.container {
-    display: grid;
-}
-
-.main__title {
-    color: red
-}
-
-.header__name {
-    color: blue;
+img {
+    width: 100%;
 }
 
 body {
-    color: red
+    background-color: rgb(187, 184, 184)
 }
+
+/* Layout */
+
+/* header */
+
+.main__header {
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.header__title {
+    color: White;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 4rem auto 7rem;
+    min-height: 100vh;
+}
+
+.footer {
+    background-color: #666;
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 3rem;
+}
+
+/* home page*/
+
+.meme__cards {
+    display: grid;
+    grid-gap: 2rem 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    list-style-type: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 60rem;
+    width: 80%;
+}
+
+.meme__image {
+    box-shadow: 0 2px 4px 0 #666;
+    
+}
+
+/* footer */

@@ -1,5 +1,5 @@
 const data = require("../models/populator");
-const newReview = require("../models/Reviews/review-repository");
+const Review = require("../models/Reviews/review");
 
 class ReviewController {
   static renderReviews(req, res, next) {
@@ -14,9 +14,17 @@ class ReviewController {
   }
 
   static addReview(req, res, next) {
-    const id = req.params.id;
-    const reviews = newReview.addReview(id);
-    res.render("reviews", { reviews });
+    // const id = req.body.id;
+    const title = req.body.title;
+    const imageUrl = req.body.imageUrl;
+    const reviewCategory = req.body.reviewCategory;
+    const content = req.body.content;
+
+    data.addReview(new Review(title, imageUrl, reviewCategory, content));
+
+    res.redirect("/reviews");
+    // const reviews = newReview.addReview(id);
+    // res.render("reviews", { reviews });
   }
 }
 

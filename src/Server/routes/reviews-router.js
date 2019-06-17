@@ -9,6 +9,6 @@ router.get("/", ReviewController.renderReviews);
 /* GET review. */
 router.get("/:id", ReviewController.renderReview);
 
-// router.post("/:id", ReviewRepository.addReview);
+router.post("/add", ReviewController.addReview);
 
 module.exports = router;

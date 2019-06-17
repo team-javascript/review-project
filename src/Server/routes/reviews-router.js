@@ -10,8 +10,3 @@ router.get("/", ReviewController.renderReviews);
 router.get("/:id", ReviewController.renderReview);
 
 module.exports = router;
-
-/* GET users listing. */
-// router.get("/", function(req, res, next) {
-//   res.send("respond with a resource");
-// });

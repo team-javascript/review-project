@@ -4,8 +4,8 @@ const request = require("supertest");
 
 const app = require("../../../app");
 
-describe("Router tests", () => {
-  test("Should return a redirect", done => {
+describe("Home Router/Controller tests", () => {
+  test("Should successfully redirect", done => {
     //Arrange
     request(app)
       //Act
@@ -13,6 +13,19 @@ describe("Router tests", () => {
       .then(response => {
         //Assert
         expect(response.statusCode).toBe(302);
+        done();
+      });
+  });
+
+  test("Should successfully redirect from '/' to '/reviews' ", done => {
+    //Arrange
+    request(app)
+      //Act
+      .get("/")
+      .then(response => {
+        //Assert
+        expect(response.req.path).toBe("/");
+        expect(response.headers.location).toBe("/reviews");
         done();
       });
   });

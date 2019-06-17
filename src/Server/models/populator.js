@@ -40,6 +40,9 @@ function populateReviews() {
       "test category3"
     )
   );
+  repo.addReview(
+    new Review(5, "test title3", "test3", "test image url3", "test category3")
+  );
 }
 
 populateReviews();

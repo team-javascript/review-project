@@ -7,41 +7,40 @@ function populateReviews() {
   repo.addReview(
     new Review(
       1,
-      "test this",
-      "https://www.lifewire.com/thmb/miKAPcqjSNyQ960gpsFtoEjr17w=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/sstMxMh-5ab00c7bfa6bcc003622e4f5.jpg",
-      "really works",
-      "watch"
+      "Me and the boys in different tabs",
+      "https://i.kym-cdn.com/photos/images/newsfeed/001/503/644/a9e.jpg",
+      "This meme showcases how the boys feel going out on a typical friday night",
+      "Funny meme"
     )
   );
+
   repo.addReview(
     new Review(
       2,
-      "Test title",
-      "https://www.lifewire.com/thmb/miKAPcqjSNyQ960gpsFtoEjr17w=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/sstMxMh-5ab00c7bfa6bcc003622e4f5.jpg",
-      "test image url",
-      "test category"
+      "Legends of Stack Overflow",
+      "https://preview.redd.it/ypn3iqc1whl21.jpg?width=640&crop=smart&auto=webp&s=d662c4bc00f4daec60f990d1e7f752278830e7dc",
+      "The joke of this meme is the imposter syndrome that all devs feel inside",
+      "Programming humor"
     )
   );
+
   repo.addReview(
     new Review(
       3,
-      "test title 2",
+      "My goal for 2018",
       "https://www.lifewire.com/thmb/miKAPcqjSNyQ960gpsFtoEjr17w=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/sstMxMh-5ab00c7bfa6bcc003622e4f5.jpg",
-      "test image url2",
-      "test category2"
+      "This meme is about perpetually procrastinating on your goals",
+      "Self-deprecating humor"
     )
   );
   repo.addReview(
     new Review(
       4,
-      "test title3",
-      "https://www.lifewire.com/thmb/miKAPcqjSNyQ960gpsFtoEjr17w=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/sstMxMh-5ab00c7bfa6bcc003622e4f5.jpg",
-      "test image url3",
-      "test category3"
+      "'While' E. Coyote",
+      "https://preview.redd.it/xn0r30skack21.jpg?width=640&crop=smart&auto=webp&s=c4e3036b81550c6767b94970a92c41771cd8428f",
+      "This meme is a joke about while loops and a classic cartoon",
+      "Programming humor"
     )
-  );
-  repo.addReview(
-    new Review(5, "test title3", "test3", "test image url3", "test category3")
   );
 }
 

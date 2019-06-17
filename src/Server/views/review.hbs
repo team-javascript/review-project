@@ -1,10 +1,20 @@
 <main>
-    <section class="review-details">
-        <h1>{{review.title}}</h1>
-        <h2>{{review.author}}</h2>
-    </section>
-    <ul>
-        <li>ISBN: {{review.isbn}}</li>
-        <li>Description: {{review.description}}</li>
-    </ul>
+
+    <div class="card-wrapper">
+        <section class="card-details">
+            <h1>{{review.name}}</h1>
+            <figure><img src={{review.imageUrl}} alt="{{name}}"></figure>
+
+
+        </section>
+        <ul class="details-list">
+
+            <li>Category: {{review.reviewCategory}}</li>
+            <li>Content: {{review.content}}</li>
+
+        </ul>
+
+    </div>
+    <a class="home-nav" href="/">Back to Home</a>
+
 </main>

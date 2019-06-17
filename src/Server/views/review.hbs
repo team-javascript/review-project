@@ -1,13 +1,18 @@
 <main>
-    <div class="container">
-        <ul class="review-cards">
-            {{#each review}}
-            <li class="review-card">
-                <figure><img src="{{imageUrl}}" alt="{{title}}"></figure>
-                <a class="review-card__link" href="/review-collection/{{id}}">{{title}}</a>
-            </li>
-            {{/each}}
+
+    <div class="review-wrapper">
+        <section class="review-details">
+            <h1>{{review.title}}</h1>
+            <figure><img src={{review.imageUrl}} alt="{{title}}"></figure>
+
+
+        </section>
+        <ul class="details-list">
+
+            <li>Category: {{review.reviewCategory}}</li>
+            <li>Content: {{review.content}}</li>
         </ul>
+        <a class="home-nav" href="/">Back to Home</a>
+
     </div>
-    <a href="/">Back to Home</a>
 </main>

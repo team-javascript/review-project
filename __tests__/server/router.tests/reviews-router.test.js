@@ -4,7 +4,7 @@ jest.mock("../../../src/Server/controllers/review-controller.js");
 const request = require("supertest");
 const app = require("../../../app");
 
-describe("Books router/controller", () => {
+describe("Reviews router/controller", () => {
   test("Should successfully connect to '/reviews' ", done => {
     //Arrange
     request(app)
@@ -20,9 +20,9 @@ describe("Books router/controller", () => {
     request(app)
       .get("/reviews")
       .then(response => {
-        // console.log(response);
+        console.log(response);
         expect(response.text).toBe(
-          '<!DOCTYPE html>\n<html lang="en">\n\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <meta http-equiv="X-UA-Compatible" content="ie=edge">\n  <link rel=\'stylesheet\' href=\'/stylesheets/style.css\' />\n  <title>Welp...</title>\n</head>\n\n<body>\n  <div class="wrapper">\n    <header class="main__header">\n      <h1>Welp...</h1>\n    </header>\n    <main>\n  <div class="container">\n    <ul class="review-cards">\n      <li class="review-card">\n        <figure><img src="test URL" alt="Test Title"></figure>\n        <a class="review-card__link" href="/reviews/5">Test Title</a>\n      </li>\n    </ul>\n    <nav>\n      <ul>\n        <li><a href=""></a></li>\n        <li><a href="/views/reviews.hbs">Reviews</a></li>\n      </ul>\n    </nav>\n  </div>\n  <a href="/">Back to Home</a>\n</main>\n    <footer class="footer">\n      <small class="footer__copy">&copy; Aquisitions Inc, 2019</small>\n    </footer>\n  </div>\n</body>'
+          '<!DOCTYPE html>\r\n<html lang="en">\r\n\r\n<head>\r\n   <meta charset="UTF-8">\r\n   <meta name="viewport" content="width=device-width, initial-scale=1.0">\r\n   <meta http-equiv="X-UA-Compatible" content="ie=edge">\r\n   <link rel=\'stylesheet\' type="text/css" href="stylesheets/style.css" media="all" />\r\n   <title>Welp...</title>\r\n</head>\r\n\r\n<body>\r\n   <div class="wrapper">\r\n      <header class="main__header">\r\n         <h1 class="header__title">Welp...</h1>\r\n      </header>\r\n      <main>\r\n   <div class="container">\r\n      <ul class="meme__cards">\r\n         <li class="meme__card">\r\n            <figure class="meme__fegure"><img class="meme__image" src="test URL" alt="Test Title"></figure>\r\n            <a class="meme__link" href="/reviews/5">Test Title</a>\r\n         </li>\r\n      </ul>\r\n      <nav class="nav__tab">\r\n         <ul class="nav__tabs">\r\n            <li class="tab"><a href=""></a></li>\r\n            <li class="tab"><a href="/views/reviews.hbs">Reviews</a></li>\r\n         </ul>\r\n      </nav>\r\n   </div>\r\n</main>\r\n      <a href="/">Back to Home</a>\r\n      <footer class="footer">\r\n         <small class="footer__copy">&copy; Aquisitions Inc, 2019</small>\r\n      </footer>\r\n   </div>\r\n</body>'
         );
         done();
       });
@@ -35,6 +35,8 @@ describe("Books router/controller", () => {
       .get("/reviews/1")
       .then(response => {
         // Assert
+
+        // console.log(response);
         expect(response.statusCode).toBe(200);
         done();
       });
@@ -49,7 +51,7 @@ describe("Books router/controller", () => {
         // Assert
         // console.log(response);
         expect(response.text).toBe(
-          `<!DOCTYPE html>\n<html lang="en">\n\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <meta http-equiv="X-UA-Compatible" content="ie=edge">\n  <link rel=\'stylesheet\' href=\'/stylesheets/style.css\' />\n  <title>Welp...</title>\n</head>\n\n<body>\n  <div class="wrapper">\n    <header class="main__header">\n      <h1>Welp...</h1>\n    </header>\n    <main>\n    <div class="container">\n        <ul class="review-cards">\n            <li class="review-card">\n                <figure><img src="test URL" alt="Test Title"></figure>\n                <a class="review-card__link" href="/review-collection/1">Test Title</a>\n            </li>\n        </ul>\n    </div>\n    <a href="/">Back to Home</a>\n</main>\n    <footer class="footer">\n      <small class="footer__copy">&copy; Aquisitions Inc, 2019</small>\n    </footer>\n  </div>\n</body>`
+          `<!DOCTYPE html>\r\n<html lang="en">\r\n\r\n<head>\r\n   <meta charset="UTF-8">\r\n   <meta name="viewport" content="width=device-width, initial-scale=1.0">\r\n   <meta http-equiv="X-UA-Compatible" content="ie=edge">\r\n   <link rel=\'stylesheet\' type="text/css" href="stylesheets/style.css" media="all" />\r\n   <title>Welp...</title>\r\n</head>\r\n\r\n<body>\r\n   <div class="wrapper">\r\n      <header class="main__header">\r\n         <h1 class="header__title">Welp...</h1>\r\n      </header>\r\n      <main>\r\n    <section class="review-details">\r\n        <h1></h1>\r\n        <h2></h2>\r\n    </section>\r\n    <ul>\r\n        <li>ISBN: </li>\r\n        <li>Description: </li>\r\n    </ul>\r\n</main>\r\n      <a href="/">Back to Home</a>\r\n      <footer class="footer">\r\n         <small class="footer__copy">&copy; Aquisitions Inc, 2019</small>\r\n      </footer>\r\n   </div>\r\n</body>`
         );
         done();
       });

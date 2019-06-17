@@ -1,9 +1,9 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 const AddController = require("../controllers/add-controller");
 
-/* GET home page. */
+/* Add book. */
 router.get("/", AddController.renderReview);
 
 module.exports = router;

@@ -16,11 +16,13 @@ class ReviewController {
       if (err) return handleError(err);
       if (review) {
         res.render("review", { review });
+       
+
       }
     });
   }
-
   static addReview(req, res, next) {
+    res.render("add", { add });
     const title = req.body.title;
     const content = req.body.content;
     const category = req.body.category;

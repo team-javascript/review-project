@@ -1,6 +1,6 @@
-const mongoose = ("mongoose")
+const mongoose = require("mongoose")
 
-const Review = require("./Reviews/review")
+// const Review = require("./Reviews/review")
 
 const {username, password} = require("../config/db")
 

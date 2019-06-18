@@ -1,3 +1,5 @@
+const mongoose = require("mongoose")
+
 const Review = require("../models/Reviews/review");
 
 class ReviewController {
@@ -19,15 +21,18 @@ class ReviewController {
   }
 
   static addReview(req, res, next) {
-    // const id = req.body.id;
     const title = req.body.title;
-    const imageUrl = req.body.imageUrl;
-    const category = req.body.category;
     const content = req.body.content;
+    const category = req.body.category;
+    const imageUrl = req.body.imageUrl;
+
 
     const reviewToAdd = new Review({
-      title, imageUrl, category, content
-    })
+      title, 
+      content, 
+      category, 
+      imageUrl
+    });
   
     reviewToAdd.save((error, reviewToAdd) => {
       if (error) return console.error(error);
@@ -35,6 +40,7 @@ class ReviewController {
     })
   }
 }
+
 
 
 

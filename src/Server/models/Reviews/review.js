@@ -1,12 +1,10 @@
-//app factory function
-const mongoose = require("mongoose")
-
-module.exports = mongoose.model (
-"Review",
+const mongoose = require("mongoose");
+module.exports = mongoose.model(
+  "Review",
   new mongoose.Schema({
     title: String,
-    imageUrl: String,
+    content: String,
     category: String,
-    content: String
+    imageUrl: String
   })
 );

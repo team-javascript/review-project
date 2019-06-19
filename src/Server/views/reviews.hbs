@@ -1,19 +1,19 @@
 <main>
-   <div class="container">
-      <ul class="meme__cards">
+   <div class="reviews__container">
+      <ul class="reviews__meme__cards">
          {{#each reviews}}
-         <li class="meme__card">
-            <figure class="meme__fegure"><img class="meme__image" src="{{imageUrl}}" alt="{{title}}"></figure>
-            <a class="meme__link" href="/reviews/{{id}}">{{title}}</a>
+         <li class="reviews__meme__card">
+            <figure class="reviews__meme__fegure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}"></figure>
+            <a class="reviews__meme__link" href="/reviews/{{id}}">{{title}}</a>
          </li>
          {{/each}}
       </ul>
-      <nav class="nav__tab">
-         <ul class="nav__tabs">
+      <nav class="reviews__nav__tab">
+         <ul class="reviews__nav__tabs">
             {{!-- <a class="tab"><a href=""></a></a> --}}
             {{!-- <a class="tab"><a href="/views/reviews.hbs">Reviews</a></a> --}}
          </ul>
       </nav>
    </div>
-   <a class="add-card-button" href="/add/">Add a card</a>
+   <a class="reviews__add-card-button" href="/add/">Add a card</a>
 </main>

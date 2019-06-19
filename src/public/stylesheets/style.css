@@ -16,25 +16,25 @@ body {
 
 /* header */
 
-.main__header {
+.layout__header {
     background-color: blue;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
-.header__title {
+.layout__title {
     color: White;
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.wrapper {
+.card__wrapper {
     display: grid;
     grid-template-rows: 4rem auto 7rem;
-    min-height: 100vh;
+    max-height: 60vh;
 }
 
-.footer {
+.layout__footer {
     background-color: #666;
     align-items: center;
     color: white;

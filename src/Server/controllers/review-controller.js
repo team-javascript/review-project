@@ -13,7 +13,7 @@ class ReviewController {
     const id = req.params.id;
     var query = Review.where({ _id: id });
     query.findOne((err, review) => {
-      if (error) return handleError(error);
+      if (err) return handleError(err);
       if (review) {
         res.render("review", { review });
        
@@ -22,7 +22,6 @@ class ReviewController {
     });
   }
   static addReview(req, res, next) {
-    // res.render("add", { add });
     const title = req.body.title;
     const content = req.body.content;
     const category = req.body.category;

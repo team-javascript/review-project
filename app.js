@@ -6,17 +6,10 @@ var logger = require("morgan");
 
 var homeRouter = require("./src/Server/routes/home-router");
 var reviewsRouter = require("./src/Server/routes/reviews-router");
-// var addRouter = require("./src/Server/routes/add-router");
 
 var app = express();
 
-
-//DB connection
-//const db connection = string from mongo
-//pasted in mongo stuff from slides and updated the connection to what we required on line 14 then changed stuff to match books
-//db setup
 require("./src/server/models/db")
-
 
 // view engine setup
 app.set("views", path.join(__dirname, "./src/Server/views"));

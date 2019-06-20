@@ -22,6 +22,7 @@ body {
 /* header */
 
 .layout__header {
+<<<<<<< HEAD
   background-color: blue;
   justify-content: center;
   align-items: center;
@@ -45,6 +46,32 @@ body {
   color: white;
   display: flex;
   justify-content: center;
+=======
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.layout__title {
+    color: White;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.card__wrapper {
+    display: grid;
+    grid-template-rows: 4rem auto 7rem;
+    max-height: 60vh;
+}
+
+.layout__footer {
+    background-color: #666;
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 3rem;
+>>>>>>> team
 }
 
 /* home page*/

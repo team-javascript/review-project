@@ -36,16 +36,16 @@ class ReviewController {
 
     Category.findById(categoryId, (err, category) => {
       category.reviews.push(reviewToAdd);
-      reviewToAdd.categories.push(category);
-    });
-
-    category.save((err, category) => {
-      if (err) return console.error(err);
-    });
-
-    reviewToAdd.save((error, reviewToAdd) => {
-      if (error) return console.error(error);
-      res.redirect("/reviews");
+      reviewToAdd.category.push(category);
+      
+      category.save((err, category) => {
+        if (err) return console.error(err);
+      });
+      
+      reviewToAdd.save((error, reviewToAdd) => {
+        if (error) return console.error(error);
+        res.redirect("/reviews");
+      });
     });
   }
 }

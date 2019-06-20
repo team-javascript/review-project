@@ -1,7 +1,7 @@
 <main>
    <div class="container">
       <div class="details-wrapper">
-        <form action="/reviews/add" method="POST">
+         <form action="/reviews/add" method="POST">
             Title <input type="text" name="title" />
             Image Url<input type="text" name="imageUrl" />
             <label>
@@ -14,8 +14,8 @@
             </label>
             Content<input type="text" name="content" />
             <button type="submit">Add Meme</button>
-        </form>
-    </div>
+         </form>
+      </div>
       <ul class="meme__cards">
          {{#each reviews}}
          <li class="meme__card">

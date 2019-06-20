@@ -14,7 +14,7 @@ class CategoryController {
     var query = Category.where({ _id: id });
     query.findOne((err, category) => {
       if (err) return console.error(err);
-      if (review) {
+      if (category) {
         res.render("category", { category });
       }
     });
@@ -26,7 +26,7 @@ class CategoryController {
       categoryTitle
     });
 
-    categoryToAdd.save((err, category) => {
+    categoryToAdd.save((err, categoryToAdd) => {
       if (err) return console.error(err);
       res.redirect("/categories");
     });

@@ -3,7 +3,7 @@
       <ul class="reviews__meme__cards">
          {{#each reviews}}
          <li class="reviews__meme__card">
-            <figure class="reviews__meme__fegure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}"></figure>
+            <figure class="reviews__meme__fegure"><a href="/reviews/{{id}}"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}"></figure></a>
             <a class="reviews__meme__link" href="/reviews/{{id}}">{{title}}</a>
          </li>
          {{/each}}

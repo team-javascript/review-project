@@ -54,16 +54,23 @@ body {
   grid-gap: 2rem 1rem;
   grid-template-columns: repeat(2, 1fr);
   list-style-type: none;
+  
 }
 
 .reviews__container {
+  padding-top: 3rem;
   margin: 0 auto;
   max-width: 60rem;
   width: 80%;
 }
 
 .reviews__meme__image {
-  box-shadow: 0 2px 4px 0 #666;
+  box-shadow: 10px 10px 5px 0 lightgray;
+}
+
+.reviews__meme__card:hover {
+  box-shadow: #666;
+  background-color: #666;
 }
 
 /* footer */

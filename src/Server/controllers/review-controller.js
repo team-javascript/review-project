@@ -16,7 +16,7 @@ class ReviewController {
     const id = req.params.id;
     var query = Review.where({ _id: id });
     query.findOne((err, review) => {
-      if (err) return handleError(err);
+      if (err) return console.error(err);
       if (review) {
         res.render("review", { review });
       }

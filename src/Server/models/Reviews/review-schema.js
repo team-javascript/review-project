@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 module.exports = new mongoose.Schema({
     title: String,
     content: String,
-    category: [categorySchema],
+    categoryTitle: [categorySchema],
     imageUrl: String
 })
 

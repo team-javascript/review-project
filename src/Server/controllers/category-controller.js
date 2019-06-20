@@ -26,7 +26,7 @@ class CategoryController {
       categoryTitle
     });
 
-    categoryToAdd.save((err, categoryToAdd) => {
+    categoryToAdd.save((err, categories) => {
       if (err) return console.error(err);
       res.redirect("/categories");
     });

@@ -3,10 +3,10 @@
         <label>Category: <input type="text" name="category">
             <button>Submit</button>
     </form>
-    <ul class="category-cards">
+    <ul class="category__list">
         {{#each categories}}
-        <li class="category-card">
-            <a class="category-card__link" href="/categories/{{id}}">{{category}}</a>
+        <li class="category__list__item">
+            <a class="category__list__item__link" href="/categories/{{id}}">{{category}}</a>
         </li>
         {{/each}}
     </ul>

@@ -1,5 +1,5 @@
 <main>
-   <ul class="reviews__meme__cards">
+   <ul class="reviews__form">
       <form action="/reviews/add" method="POST">
          Title <input type="text" name="title" />
          Image Url<input type="text" name="imageUrl" />
@@ -14,14 +14,13 @@
          Content<input type="text" name="content" />
          <button type="submit">Add Meme</button>
       </form>
-      <ul class="meme__cards">
+      <ul class="reviews__cards__list">
          {{#each reviews}}
-         <li class="reviews__meme__card">
+         <li class="reviews__card__list__item">
             <figure class="reviews__meme__fegure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
             </figure>
             <a class="reviews__meme__link" href="/reviews/{{id}}">{{title}}</a>
          </li>
          {{/each}}
       </ul>
-      </nav>
 </main>

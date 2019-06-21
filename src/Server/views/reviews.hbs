@@ -16,9 +16,8 @@
       <ul class="reviews__cards__list">
          {{#each reviews}}
          <li class="reviews__card__list__item">
-            <figure class="reviews__meme__figure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
-            </figure>
-            <a class="reviews__meme__link" href="/reviews/{{id}}">{{title}}</a>
+            <a  href="/reviews/{{id}}">{{title}}<figure class="reviews__meme__figure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
+            </figure></a>
          </li>
          {{/each}}
       </ul>

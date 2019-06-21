@@ -1,9 +1,9 @@
 <main>
     <section class="category-details">
-        <h1>{{category.categoryName}}</h1>
+        <h1>{{category.category}}</h1>
         <ul>
             {{#each category.reviews}}
-            <li><a href="/reviews/{{id}}">{{categoryTitle}}</a></li>
+            <li><a href="/reviews/{{id}}">{{category}}</a></li>
             {{/each}}
         </ul>
     </section>

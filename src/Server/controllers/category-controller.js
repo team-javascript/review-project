@@ -20,10 +20,10 @@ class CategoryController {
     });
   }
   static addCategory(req, res, next) {
-    const categoryTitle = req.body.category;
+    const category = req.body.category;
 
     const categoryToAdd = new Category({
-      categoryTitle
+      category
     });
 
     categoryToAdd.save((err, categories) => {

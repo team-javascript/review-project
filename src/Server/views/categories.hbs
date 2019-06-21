@@ -1,16 +1,13 @@
 <main>
-    <div class="container">
-        <form class="category-form" action="/categories/add" method="POST">
-            <label>Category: <input type="text" name="category">
-                <button>Submit</button>
-        </form>
-        <ul class="category-cards">
-            {{#each categories}}
-            <li class="category-card">
-                <a class="category-card__link" href="/categories/{{id}}">{{category}}</a>
-            </li>
-            {{/each}}
-        </ul>
-
-    </div>
+    <form class="category-form" action="/categories/add" method="POST">
+        <label>Category: <input type="text" name="category">
+            <button>Submit</button>
+    </form>
+    <ul class="category-cards">
+        {{#each categories}}
+        <li class="category-card">
+            <a class="category-card__link" href="/categories/{{id}}">{{category}}</a>
+        </li>
+        {{/each}}
+    </ul>
 </main>

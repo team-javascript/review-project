@@ -9,13 +9,14 @@
 
         </section>
         <ul class="review__details-list">
-
-            <li>Category: {{category}}</li>
+            {{#each review.categories}}
+            <li><a href="/categories/{{id}}">{{category}}</a></li>
+            {{/each}}
             <li>Content: {{review.content}}</li>
 
         </ul>
 
     </div>
-    
+
 
 </main>

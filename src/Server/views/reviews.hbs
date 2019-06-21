@@ -1,18 +1,17 @@
 <main>
-   <form action="/reviews/add" method="POST">
-      Title <input maxlength="20" type="text" name="title" />
-      Image Url<input type="text" name="imageUrl" />
-      <label>
-         Category:
-         <select name="category">
+   <div class="grid-container">
+      <form action="/reviews/add" method="POST">
+         <label> Title </label><input maxlength="20" type="text" name="title" />
+         <label> Image Url</label><input type="text" name="imageUrl" />
+         <label>Category:</label><select name="category">
             {{#each categories}}
             <option value="{{id}}">{{category}}</option>
             {{/each}}
          </select>
-      </label>
-      Content<input type="text" name="content" />
-      <button type="submit">Add Meme</button>
-   </form>
+         <label>Content</label><input type="text" name="content" />
+         <button type="submit">Add Meme</button>
+      </form>
+   </div>
    <ul class="reviews__cards__list">
       {{#each reviews}}
       <li class="reviews__card__list__item">

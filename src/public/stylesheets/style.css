@@ -1,6 +1,7 @@
+/* General styling and resets */
 * {
   box-sizing: border-box;
-  margin: 0 a;
+  margin: 0;
   padding: 0;
 }
 
@@ -22,17 +23,35 @@ ul {
   list-style: none;
 }
 
+/* Layout styling */
 .layout__header {
   display: grid;
-  grid-template-rows: 3rem auto;
-  justify-content: center;
-  background-color: midnightblue;
+  grid-template-areas: "left center right";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px;
+  width: 100%;
+  background-color: magenta;
+  align-items: center;
+}
+
+.grid-left {
+  grid-area: left;
+}
+
+.grid-center {
+  grid-area: center;
+}
+
+.grid-right {
+  grid-area: right;
+  margin-right: 3rem;
 }
 
 .nav__menu__list__item {
   display: inline-flex;
 }
 
+/* Reviews view styling */
 .reviews__cards__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,4 +71,22 @@ ul {
 
 .reviews__card__list__item:hover {
   background-color: lightgray;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+select {
+  padding: 0.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  text-align: center;
 }

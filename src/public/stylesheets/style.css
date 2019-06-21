@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+html {
+    color: #666;
+    font: 20px/1 sans-serif;
+  }
+
+img {
+      max-width: 75%;
+    width: 100%;
+  }
+  
+ul {
+    list-style: none;
+  }
+  
+.reviews__cards__list{
+    display: grid;
+    grid-gap: 2rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 3rem;
+
+  }
+
+.reviews__card__list__item{
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 10px 10px 5px grey;
+  justify-content: center;
+  margin: 0 auto;
+
+  }

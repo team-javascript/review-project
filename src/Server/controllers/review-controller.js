@@ -7,7 +7,7 @@ class ReviewController {
   static renderReviews(req, res, next) {
     Review.find({}, (err, reviews) => {
       Category.find({}, (err, categories) => {
-        res.render("reviews", { categories, reviews });
+        res.render("reviews", { reviews, categories });
       });
     });
   }
@@ -25,7 +25,7 @@ class ReviewController {
   static addReview(req, res, next) {
     const title = req.body.title;
     const content = req.body.content;
-    const categoryId = req.body.categoryId;
+    const categoryName = req.body.category;
     const imageUrl = req.body.imageUrl;
 
     const reviewToAdd = new Review({
@@ -34,14 +34,14 @@ class ReviewController {
       imageUrl
     });
 
-    Category.findById(categoryId, (err, category) => {
+    Category.findById(categoryName, (err, category) => {
+      reviewToAdd.categories.push(category);
       category.reviews.push(reviewToAdd);
-      reviewToAdd.category.push(category);
-      
+
       category.save((err, category) => {
         if (err) return console.error(err);
       });
-      
+
       reviewToAdd.save((error, reviewToAdd) => {
         if (error) return console.error(error);
         res.redirect("/reviews");

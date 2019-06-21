@@ -1,45 +1,27 @@
 <main>
-<<<<<<< HEAD
-   <div class="reviews__container">
-      <ul class="reviews__meme__cards">
-=======
-   <div class="container">
-      <div class="details-wrapper">
-         <form action="/reviews/add" method="POST">
-            Title <input type="text" name="title" />
-            Image Url<input type="text" name="imageUrl" />
-            <label>
-               Category: 
-            <select name="categoryId">
+   <ul class="reviews__meme__cards">
+      <form action="/reviews/add" method="POST">
+         Title <input type="text" name="title" />
+         Image Url<input type="text" name="imageUrl" />
+         <label>
+            Category:
+            <select name="category">
                {{#each categories}}
                <option value="{{id}}">{{category}}</option>
                {{/each}}
             </select>
-            </label>
-            Content<input type="text" name="content" />
-            <button type="submit">Add Meme</button>
-         </form>
-      </div>
+         </label>
+         Content<input type="text" name="content" />
+         <button type="submit">Add Meme</button>
+      </form>
       <ul class="meme__cards">
->>>>>>> team
          {{#each reviews}}
          <li class="reviews__meme__card">
-            <figure class="reviews__meme__fegure"><a href="/reviews/{{id}}"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}"></figure></a>
+            <figure class="reviews__meme__fegure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
+            </figure>
             <a class="reviews__meme__link" href="/reviews/{{id}}">{{title}}</a>
          </li>
          {{/each}}
       </ul>
-<<<<<<< HEAD
-      <nav class="reviews__nav__tab">
-         <ul class="reviews__nav__tabs">
-            {{!-- <a class="tab"><a href=""></a></a> --}}
-            {{!-- <a class="tab"><a href="/views/reviews.hbs">Reviews</a></a> --}}
-         </ul>
       </nav>
-   </div>
-   <a class="reviews__add-card-button" href="/add/">Add a card</a>
-=======
-      </nav>
-   </div>
->>>>>>> team
 </main>

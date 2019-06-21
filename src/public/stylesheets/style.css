@@ -1,47 +1,55 @@
-*{
-    box-sizing: border-box;
-    margin: 0 a;
-    padding: 0;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0 a;
+  padding: 0;
+}
 
-  body{
-    background-color: rgb(187, 184, 184);
-  }
-  
+body {
+  background-color: rgb(187, 184, 184);
+}
+
 html {
-    color: #666;
-    font: 20px/1 sans-serif;
-  }
+  color: #666;
+  font: 20px/1 sans-serif;
+}
 
 img {
-    width: 16rem;
-    height: 16rem;
-  }
-  
+  width: 20vw;
+  height: 30vh;
+}
+
 ul {
-    list-style: none;
-  }
-  
-.reviews__cards__list{
-    display: grid;
-    grid-template-columns: repeat(3, .3fr);
-    padding-top: 3rem;
+  list-style: none;
+}
 
-  }
+.layout__header {
+  display: grid;
+  grid-template-rows: 3rem auto;
+  justify-content: center;
+  background-color: midnightblue;
+}
 
-.reviews__card__list__item{
+.nav__menu__list__item {
+  display: inline-flex;
+}
+
+.reviews__cards__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 3rem;
+}
+
+.reviews__card__list__item {
+  background-color: white;
   border-radius: 0.25rem;
+  box-shadow: 5px 5px 5px grey;
   display: flex;
   flex-direction: column;
-  box-shadow: 10px 10px 5px grey;
-  margin: 0 auto;
+  margin: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
-  background-color: white;
-  padding-top: 1rem;
+}
 
-  }
-  
-
-.reviews__card__list__item:hover{
-     background-color: lightgray;
+.reviews__card__list__item:hover {
+  background-color: lightgray;
 }

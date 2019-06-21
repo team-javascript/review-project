@@ -1,24 +1,27 @@
 <main>
-      <form action="/reviews/add" method="POST">
-         Title <input type="text" name="title" />
-         Image Url<input type="text" name="imageUrl" />
-         <label>
-            Category:
-            <select name="category">
-               {{#each categories}}
-               <option value="{{id}}">{{category}}</option>
-               {{/each}}
-            </select>
-         </label>
-         Content<input type="text" name="content" />
-         <button type="submit">Add Meme</button>
-      </form>
-      <ul class="reviews__cards__list">
-         {{#each reviews}}
-         <li class="reviews__card__list__item">
-            <a  href="/reviews/{{id}}">{{title}}<figure class="reviews__meme__figure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
-            </figure></a>
-         </li>
-         {{/each}}
-      </ul>
+   <form action="/reviews/add" method="POST">
+      Title <input maxlength="20" type="text" name="title" />
+      Image Url<input type="text" name="imageUrl" />
+      <label>
+         Category:
+         <select name="category">
+            {{#each categories}}
+            <option value="{{id}}">{{category}}</option>
+            {{/each}}
+         </select>
+      </label>
+      Content<input type="text" name="content" />
+      <button type="submit">Add Meme</button>
+   </form>
+   <ul class="reviews__cards__list">
+      {{#each reviews}}
+      <li class="reviews__card__list__item">
+         {{title}}
+         <a href="/reviews/{{id}}">
+            <figure class="reviews__meme__figure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
+            </figure>
+         </a>
+      </li>
+      {{/each}}
+   </ul>
 </main>

@@ -37,7 +37,6 @@ class ReviewController {
     Category.findById(categoryName, (err, category) => {
       reviewToAdd.categories.push(category);
       category.reviews.push(reviewToAdd);
-
       category.save((err, category) => {
         if (err) return console.error(err);
       });

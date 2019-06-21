@@ -1,12 +1,5 @@
-const categorySchema = require("../Schema/category-schema");
+const reviewSchema = require("../Reviews/review-schema");
 const mongoose = require("mongoose");
 
-module.exports = mongoose.model(
-  "Review",
-  new mongoose.Schema({
-    title: String,
-    content: String,
-    category: [categorySchema],
-    imageUrl: String
-  })
-);
+
+module.exports = mongoose.model('Review', reviewSchema)

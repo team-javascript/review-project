@@ -9,7 +9,7 @@ class ReviewController {
     Review.find({}, (err, reviews) => {
       Category.find({}, (err, categories) => {
         Tag.find({}, (err, tags) => {
-         res.render("reviews", { reviews, categories });
+         res.render("reviews", { reviews, categories, tags });
         });
       });
     });

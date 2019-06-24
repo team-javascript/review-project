@@ -76,6 +76,13 @@ ul {
   background-color: lightgray;
 }
 
+.layout__footer {
+  color: white;
+  background-color: #666666;
+  display: flex;
+  padding: 2rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -96,4 +103,9 @@ input {
 
 .meme__input {
   border-radius: 25px;
+}
+
+.tag-boxes {
+  color: blueviolet;
+  display: inline-flex;
 }

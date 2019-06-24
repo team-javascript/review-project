@@ -9,7 +9,7 @@
         {{/each}}
         <li class="review__card__content">Content: {{review.content}}</li>
         {{#each review.tags}}
-        <li class="review__card__tags">Tags: {{tag}}</li>
+         <li><a href="/tags/{{id}}">{{name}}</a></li>
         {{/each}}
     </ul>
 </main>

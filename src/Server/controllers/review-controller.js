@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const Review = require("../models/Reviews/review");
-const Category = require("../models/Schema/category");
+const Category = require("../models/category/category");
 
 class ReviewController {
   static renderReviews(req, res, next) {

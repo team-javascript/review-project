@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Category = require("../models/Schema/category");
+const Category = require("../models/category/category");
 
 class CategoryController {
   static renderCategories(req, res, next) {

@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "src/public")));
 app.use("/", homeRouter);
 app.use("/reviews", reviewsRouter);
 app.use("/categories", categoryRouter);
-app.use("/tags", tagRouter);
+app.use("/allTags", tagRouter);
 
 // app.use("/add", addRouter);
 

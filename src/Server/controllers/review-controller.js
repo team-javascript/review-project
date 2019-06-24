@@ -2,12 +2,15 @@ const mongoose = require("mongoose");
 
 const Review = require("../models/Reviews/review");
 const Category = require("../models/category/category");
+const Tag = require("../models/tag/tag")
 
 class ReviewController {
   static renderReviews(req, res, next) {
     Review.find({}, (err, reviews) => {
       Category.find({}, (err, categories) => {
-        res.render("reviews", { reviews, categories });
+        Tag.find({}, (err, tags) => {
+         res.render("reviews", { reviews, categories });
+        });
       });
     });
   }
@@ -27,6 +30,7 @@ class ReviewController {
     const content = req.body.content;
     const categoryName = req.body.category;
     const imageUrl = req.body.imageUrl;
+    const tagName = req.body.tag;
 
     const reviewToAdd = new Review({
       title,
@@ -46,7 +50,20 @@ class ReviewController {
         res.redirect("/reviews");
       });
     });
-  }
-}
+
+    Tag.findById(tagName, (err, tag) => {
+      reviewToAdd.tags.push(tag);
+      tag.reviews.push(reviewToAdd);
+      tag.save((err, tag) => {
+        if (err) return console.error(err);
+      })
+
+      reviewToAdd.save((error, reviewToAdd) => {
+        if (err) return console.error(err);
+        res.redirect("/reviews");
+      });
+    });
+  };
+};
 
 module.exports = ReviewController;

@@ -1,21 +1,21 @@
 const mongoose = require("mongoose");
 
-const Tag = require("../models/tag/tag-schema");
+const Tag = require("../models/tag/tag");
 
 class TagController {
   static renderTags(req, res, next) {
-      Tag.find({}, (err, tags) => {
-        res.render("tags", { tags });
+      Tag.find({}, (err, allTags) => {
+        res.render("allTags", { allTags });
       });
     };
 
   static renderTag(req, res, next) {
     const id = req.params.id;
     var query = Tag.where({ _id: id });
-    query.findOne((err, tag) => {
+    query.findOne((err, singleTag) => {
       if (err) return console.error(err);
-      if (tag) {
-        res.render("tag", { tag });
+      if (singleTag) {
+        res.render("singleTag", { singleTag });
       }
     });
   }
@@ -28,7 +28,7 @@ class TagController {
 
     tagToAdd.save((err, tags) => {
       if (err) return console.error(err);
-      res.redirect("/tags");
+      res.redirect("/allTags");
     });
   }
 }

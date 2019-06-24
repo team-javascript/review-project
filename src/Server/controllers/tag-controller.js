@@ -18,7 +18,7 @@ class TagController {
       .exec((err, tag) => {
         if (err) return console.error(err)
         if (tag) {
-          console.log(review)
+          console.log(tag)
           res.render('tag', { tag })
         }
       })

@@ -24,10 +24,10 @@ class TagController {
       })
   }
   static addTag(req, res, next) {
-    const tag = req.body.tag;
+    const name = req.body.name;
 
     const tagToAdd = new Tag({
-      tag
+      name
     });
 
     tagToAdd.save((err, tags) => {

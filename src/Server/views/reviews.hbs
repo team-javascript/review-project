@@ -11,8 +11,8 @@
          <label>Content</label><input type="text" name="content" />
          <fieldset class="tags">
         <legend>Tags:</legend>
-        {{#each tag}}
-        <label><input type="checkbox" name="tags" value="{{id}}"> {{tag}}</label>
+        {{#each tags}}
+        <label><input type="checkbox" name="tag" value="{{id}}"> {{tags}}</label>
         {{/each}}
       </fieldset>
          <button type="submit">Add Meme</button>

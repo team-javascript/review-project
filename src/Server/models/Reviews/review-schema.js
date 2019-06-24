@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const categorySchema = require("../category/category-schema");
-const tagSchema = require("../tag/tag-schema");
+
 
 module.exports = new mongoose.Schema({
   title: String,

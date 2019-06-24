@@ -4,18 +4,18 @@ const Tag = require("../models/tag/tag");
 
 class TagController {
   static renderTags(req, res, next) {
-      Tag.find({}, (err, allTags) => {
-        res.render("allTags", { allTags });
-      });
-    };
+    Tag.find({}, (err, tags) => {
+      res.render("tags", { tags });
+    });
+  }
 
   static renderTag(req, res, next) {
     const id = req.params.id;
     var query = Tag.where({ _id: id });
-    query.findOne((err, singleTag) => {
+    query.findOne((err, tag) => {
       if (err) return console.error(err);
-      if (singleTag) {
-        res.render("singleTag", { singleTag });
+      if (tag) {
+        res.render("tag", { tag });
       }
     });
   }
@@ -28,7 +28,7 @@ class TagController {
 
     tagToAdd.save((err, tags) => {
       if (err) return console.error(err);
-      res.redirect("/allTags");
+      res.redirect("/tags");
     });
   }
 }

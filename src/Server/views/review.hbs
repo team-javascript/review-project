@@ -8,5 +8,8 @@
         <li class=" review__card__list__item"><a href="/categories/{{id}}">{{category}}</a></li>
         {{/each}}
         <li class="review__card__content">Content: {{review.content}}</li>
+        {{#each review.tags}}
+        <li class="review__card__tags">Tags: {{tag}}</li>
+        {{/each}}
     </ul>
 </main>

@@ -16,15 +16,20 @@ class ReviewController {
   }
 
   static renderReview(req, res, next) {
-    const id = req.params.id;
-    var query = Review.where({ _id: id });
-    query.findOne((err, review) => {
-      if (err) return console.error(err);
-      if (review) {
-        res.render("review", { review });
-      }
-    });
+    const id = req.params.id
+    var query = Review.where({ _id: id })
+    query
+      .findOne()
+      .populate(['categories', 'tags'])
+      .exec((err, review) => {
+        if (err) return console.error(err)
+        if (review) {
+          console.log(review)
+          res.render('review', { review })
+        }
+      })
   }
+
   static addReview(req, res, next) {
     const title = req.body.title;
     const content = req.body.content;
@@ -39,6 +44,12 @@ class ReviewController {
     });
 
     Tag.find(tagName, (err, tag) => {
+      Category.findById(categoryName, (err, category) => {
+        reviewToAdd.categories.push(category);
+        category.reviews.push(reviewToAdd);
+        category.save((err, category) => {
+          if (err) return console.error(err);
+        
       tag.forEach(tag => {
         reviewToAdd.tags.push(tag);
         tag.reviews.push(reviewToAdd);
@@ -47,13 +58,8 @@ class ReviewController {
         })
     });
   });
+});
   
-    Category.findById(categoryName, (err, category) => {
-      reviewToAdd.categories.push(category);
-      category.reviews.push(reviewToAdd);
-      category.save((err, category) => {
-        if (err) return console.error(err);
-      });
 
       reviewToAdd.save((error, reviewToAdd) => {
         if (error) return console.error(error);

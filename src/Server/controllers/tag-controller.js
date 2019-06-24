@@ -10,14 +10,18 @@ class TagController {
   }
 
   static renderTag(req, res, next) {
-    const id = req.params.id;
-    var query = Tag.where({ _id: id });
-    query.findOne((err, tag) => {
-      if (err) return console.error(err);
-      if (tag) {
-        res.render("tag", { tag });
-      }
-    });
+    const id = req.params.id
+    var query = Tag.where({ _id: id })
+    query
+      .findOne()
+      .populate(['reviews'])
+      .exec((err, tag) => {
+        if (err) return console.error(err)
+        if (tag) {
+          console.log(review)
+          res.render('tag', { tag })
+        }
+      })
   }
   static addTag(req, res, next) {
     const tag = req.body.tag;

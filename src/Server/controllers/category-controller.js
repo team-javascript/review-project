@@ -9,16 +9,20 @@ class CategoryController {
       });
     };
 
-  static renderCategory(req, res, next) {
-    const id = req.params.id;
-    var query = Category.where({ _id: id });
-    query.findOne((err, category) => {
-      if (err) return console.error(err);
-      if (category) {
-        res.render("category", { category });
-      }
-    });
-  }
+    static renderCategory(req, res, next) {
+      const id = req.params.id
+      var query = Category.where({ _id: id })
+      query
+        .findOne()
+        .populate(['reviews'])
+        .exec((err, category) => {
+          if (err) return console.error(err)
+          if (category) {
+            console.log(review)
+            res.render('category', { category })
+          }
+        })
+    }
   static addCategory(req, res, next) {
     const category = req.body.category;
 

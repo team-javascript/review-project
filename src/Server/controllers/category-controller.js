@@ -18,7 +18,7 @@ class CategoryController {
         .exec((err, category) => {
           if (err) return console.error(err)
           if (category) {
-            console.log(review)
+            console.log(category)
             res.render('category', { category })
           }
         })

@@ -15,4 +15,8 @@ Things you will need to install to host a local server.
 
 #IN BROWSER
 
+In browser you will have the ability to add memes with an image and add attach it to a category and multiple tags.BROWSER
 
+# HOW IT WORKS
+
+1. 

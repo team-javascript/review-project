@@ -38,6 +38,16 @@ class ReviewController {
       imageUrl
     });
 
+    Tag.find(tagName, (err, tag) => {
+      tag.forEach(tag => {
+        reviewToAdd.tags.push(tag);
+        tag.reviews.push(reviewToAdd);
+        tag.save((err, tag) => {
+          if (err) return console.error(err);
+        })
+    });
+  });
+  
     Category.findById(categoryName, (err, category) => {
       reviewToAdd.categories.push(category);
       category.reviews.push(reviewToAdd);
@@ -51,18 +61,6 @@ class ReviewController {
       });
     });
 
-    Tag.findById(tagName, (err, tag) => {
-      reviewToAdd.tags.push(tag);
-      tag.reviews.push(reviewToAdd);
-      tag.save((err, tag) => {
-        if (err) return console.error(err);
-      })
-
-      reviewToAdd.save((error, reviewToAdd) => {
-        if (err) return console.error(err);
-        res.redirect("/reviews");
-      });
-    });
   };
 };
 

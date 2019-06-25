@@ -21,7 +21,7 @@ class ReviewController {
     res.render("review", { review });
   }
 
-  static async addReview(req, res, next) {
+  static addReview(req, res, next) {
     const title = req.body.title;
     const content = req.body.content;
     const categoryId = req.body.category;
@@ -34,25 +34,26 @@ class ReviewController {
       imageUrl
     });
 
-    const tagToAdd = await Tag.find({ _id: tags });
-    const category = await Category.findById(categoryId);
-    reviewToAdd.categories.push(category);
-    category.reviews.push(reviewToAdd);
+    Tag.find({ _id: tags }, (err, tags) => {
+      Category.findById(categoryId, (err, category) => {
+        reviewToAdd.categories.push(category);
+        category.reviews.push(reviewToAdd);
+        tags.forEach(tag => {
+          reviewToAdd.tags.push(tag);
+          tag.reviews.push(reviewToAdd);
+          tag.save((err, tag) => {
+            if (err) return console.error(err);
+          });
+        });
 
-    tagToAdd.forEach(tag => {
-      reviewToAdd.tags.push(tags);
-      tag.reviews.push(reviewToAdd);
-      tagToAdd.save((err, tag) => {
-        if (err) return console.error(err);
-      });
+        category.save((err, category) => {
+          if (err) return console.error(err);
+        });
 
-      category.save((err, category) => {
-        if (err) return console.error(err);
-      });
-
-      reviewToAdd.save((error, reviewToAdd) => {
-        if (error) return console.error(error);
-        res.redirect("/reviews");
+        reviewToAdd.save((error, reviewToAdd) => {
+          if (error) return console.error(error);
+          res.redirect("/reviews");
+        });
       });
     });
   }

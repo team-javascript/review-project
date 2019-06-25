@@ -26,6 +26,10 @@ ul {
 
 /* Layout styling */
 
+.grid-container {
+  background-image: url(../pictures/header-background.jpg);
+}
+
 .layout__header {
   display: grid;
   grid-template-areas: "left center right";
@@ -96,4 +100,17 @@ input {
 
 .meme__input {
   border-radius: 25px;
+  color: darkred;
+}
+
+.meme__check-box {
+  color: white;
+}
+
+.meme__check-box:hover {
+  color: orange;
+}
+
+.meme__label {
+  color: white;
 }

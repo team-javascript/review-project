@@ -103,11 +103,11 @@ input {
   color: darkred;
 }
 
-.meme__check-box {
+.tag-boxes {
   color: white;
 }
 
-.meme__check-box:hover {
+.tag-boxes:hover {
   color: orange;
 }
 

@@ -26,5 +26,5 @@ module.exports = {
     });
   },
 
-  addReview:(req, ress, next) =>{}
+  addReview:(req, res, next) =>{}
 };

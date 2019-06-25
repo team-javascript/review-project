@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(187, 184, 184);
+  background-color: cornflowerblue;
 }
 
 html {
@@ -16,7 +16,8 @@ html {
 }
 
 img {
-  width: 20vw;
+  margin: 1rem;
+  width: 25vw;
   height: 30vh;
 }
 
@@ -36,7 +37,7 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 80px;
   width: 100%;
-  background-color: magenta;
+  background-color: #f7a1c4;
   align-items: center;
 }
 
@@ -45,6 +46,7 @@ ul {
 }
 
 .grid-center {
+  margin-left: 3rem;
   grid-area: center;
 }
 
@@ -66,13 +68,14 @@ ul {
 }
 
 .reviews__card__list__item {
-  background-color: white;
+  background-color: #f7a1c4;
   border-radius: 0.25rem;
   box-shadow: 5px 5px 5px grey;
   display: flex;
   flex-direction: column;
   margin: 1rem;
   margin-bottom: 1rem;
+  padding-top: 1rem;
   text-align: center;
 }
 
@@ -86,7 +89,6 @@ form {
   max-width: 30%;
   margin: 0 auto;
   text-align: center;
-  margin-top: 1rem;
 }
 
 select {
@@ -104,7 +106,8 @@ input {
 }
 
 .tag-boxes {
-  color: white;
+  display: inline-flex;
+  color: #f7a1c4;
 }
 
 .tag-boxes:hover {
@@ -113,4 +116,7 @@ input {
 
 .meme__label {
   color: white;
+}
+
+.tag-form {
 }

@@ -3,26 +3,21 @@ const mongoose = require("mongoose");
 const Category = require("../models/category/category");
 
 class CategoryController {
-  static renderCategories(req, res, next) {
-      Category.find({}, (err, categories) => {
-        res.render("categories", { categories });
-      });
-    };
+  static async renderCategories(req, res, next) {
+    const categories = await Category.find({});
+    res.render("categories", { categories });
+  }
 
-    static renderCategory(req, res, next) {
-      const id = req.params.id
-      var query = Category.where({ _id: id })
-      query
-        .findOne()
-        .populate(['reviews'])
-        .exec((err, category) => {
-          if (err) return console.error(err)
-          if (category) {
-            console.log(category)
-            res.render('category', { category })
-          }
-        })
-    }
+  static async renderCategory(req, res, next) {
+    const id = req.params.id;
+    const category = await Category.where({ _id: id })
+      .findOne()
+      .populate(["reviews"])
+      .exec();
+
+    res.render("category", { category });
+  }
+
   static addCategory(req, res, next) {
     const category = req.body.category;
 

@@ -5,29 +5,20 @@ const Category = require("../models/category/category");
 const Tag = require("../models/tag/tag");
 
 class ReviewController {
-  static renderReviews(req, res, next) {
-    Review.find({}, (err, reviews) => {
-      Category.find({}, (err, categories) => {
-        Tag.find({}, (err, tags) => {
-          res.render("reviews", { reviews, categories, tags });
-        });
-      });
-    });
+  static async renderReviews(req, res, next) {
+    const reviews = await Review.find({});
+    const categories = await Category.find({});
+    const tags = await Tag.find({});
+    res.render("reviews", { reviews, categories, tags });
   }
 
-  static renderReview(req, res, next) {
+  static async renderReview(req, res, next) {
     const id = req.params.id;
-    var query = Review.where({ _id: id });
-    query
+    const review = await Review.where({ _id: id })
       .findOne()
       .populate(["categories", "tags"])
-      .exec((err, review) => {
-        if (err) return console.error(err);
-        if (review) {
-          console.log(review);
-          res.render("review", { review });
-        }
-      });
+      .exec();
+    res.render("review", { review });
   }
 
   static addReview(req, res, next) {

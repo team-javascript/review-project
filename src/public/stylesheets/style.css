@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -11,7 +11,7 @@ body {
 }
 
 html {
-  color: #666;
+  /* color: #666; */
   font: 20px/1 sans-serif;
 }
 
@@ -27,8 +27,11 @@ ul {
 
 /* Layout styling */
 
-.grid-container {
+.form-container {
   background-image: url(../pictures/header-background.jpg);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .layout__header {
@@ -57,17 +60,18 @@ ul {
 
 .nav__menu__list__item {
   display: inline-flex;
+  padding-left: 1rem;
 }
 
 /* Reviews view styling */
 
-.reviews__cards__list {
+.list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 3rem;
 }
 
-.reviews__card__list__item {
+.list__item {
   background-color: #f7a1c4;
   border-radius: 0.25rem;
   box-shadow: 5px 5px 5px grey;
@@ -79,11 +83,7 @@ ul {
   text-align: center;
 }
 
-.reviews__card__list__item:hover {
-  background-color: lightgray;
-}
-
-form {
+.form {
   display: flex;
   flex-direction: column;
   max-width: 30%;
@@ -100,23 +100,32 @@ input {
   text-align: center;
 }
 
-.meme__input {
-  border-radius: 25px;
-  color: darkred;
-}
 
-.tag-boxes {
-  display: inline-flex;
+.tags {
+  /* display: inline-flex; */
   color: #f7a1c4;
+  width: 35%;
 }
 
-.tag-boxes:hover {
+.tags:hover {
   color: orange;
 }
 
-.meme__label {
+.form-container__label {
   color: white;
 }
 
-.tag-form {
+
+.tag__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 3rem;
+  margin-left: 16rem;
+}
+
+.layout__footer {
+  background-color: #f7a1c4;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
 }

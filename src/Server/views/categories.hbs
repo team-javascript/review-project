@@ -1,11 +1,11 @@
 <main>
-    <form class="category-form" action="/categories/add" method="POST">
+    <form class="form" action="/categories/add" method="POST">
         <label>Category: <input type="text" name="category"></label>
-            <button class="Submit__button">Submit</button>
+            <button class="submit__button">Submit</button>
     </form>
-    <ul class="category__list">
+    <ul class="list">
         {{#each categories}}
-        <li>
+        <li class="list__item">
             <a href="/categories/{{_id}}">{{category}}</a>
         </li>
         {{/each}}

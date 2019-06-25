@@ -1,11 +1,11 @@
 <main>
-    <form class="tag-form" action="/tags/add" method="POST">
+    <form class="form" action="/tags/add" method="POST">
         <label>Tag: <input type="text" name="name"></label>
-        <button class="Submit__button">New Tag</button>
+        <button class="submit__button">New Tag</button>
     </form>
-    <ul class="tag__list">
+    <ul class="list">
         {{#each tags}}
-        <li>
+        <li class="list__item">
             <a href="/tags/{{id}}">{{name}}</a>
         </li>
         {{/each}}

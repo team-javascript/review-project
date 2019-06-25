@@ -118,5 +118,16 @@ input {
   color: white;
 }
 
-.tag-form {
+.tag__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 3rem;
+  margin-left: 16rem;
+}
+
+.layout__footer {
+  background-color: #f7a1c4;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
 }

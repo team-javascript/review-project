@@ -61,13 +61,13 @@ ul {
 
 /* Reviews view styling */
 
-.reviews__cards__list {
+.list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 3rem;
 }
 
-.reviews__card__list__item {
+.list__item {
   background-color: #f7a1c4;
   border-radius: 0.25rem;
   box-shadow: 5px 5px 5px grey;
@@ -83,7 +83,7 @@ ul {
   background-color: lightgray;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   max-width: 30%;

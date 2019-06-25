@@ -1,18 +1,18 @@
 <main>
    <div class="grid-container">
       <form action="/reviews/add" method="POST">
-         <label class="meme__label"> Title </label><input class="meme__input" maxlength="20" type="text" name="title" />
-         <label class="meme__label"> Image Url</label><input class="meme__input" type="text" name="imageUrl" />
-         <label class="meme__label">Category:</label><select class="meme__input" name="category">
+         <label> Title </label><input class="meme__input" maxlength="20" type="text" name="title" />
+         <label> Image Url</label><input class="meme__input" type="text" name="imageUrl" />
+         <label>Category:</label><select class="meme__input" name="category">
             {{#each categories}}
             <option value="{{id}}">{{category}}</option>
             {{/each}}
          </select>
          <label class="meme__label">Content</label><input class="meme__input" type="text" name="content" />
          <fieldset class="tags">
-            <legend class="meme__label">Tags:</legend>
+            <legend>Tags:</legend>
             {{#each tags}}
-            <label class="meme__check-box"><input type="checkbox" name="tag" value="{{id}}"> {{ name }} </label>
+            <label class="tag-boxes"><input type="checkbox" name="tag" value="{{id}}"> {{name}}</label>
             {{/each}}
          </fieldset>
          <button type="submit">Add Meme</button>

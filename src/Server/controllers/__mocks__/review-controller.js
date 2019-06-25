@@ -24,5 +24,7 @@ module.exports = {
         }
       }
     });
-  }
+  },
+
+  addReview:(req, res, next) =>{}
 };

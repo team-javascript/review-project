@@ -5,32 +5,23 @@ const Category = require("../models/category/category");
 const Tag = require("../models/tag/tag");
 
 class ReviewController {
-  static renderReviews(req, res, next) {
-    Review.find({}, (err, reviews) => {
-      Category.find({}, (err, categories) => {
-        Tag.find({}, (err, tags) => {
-          res.render("reviews", { reviews, categories, tags });
-        });
-      });
-    });
+  static async renderReviews(req, res, next) {
+    const reviews = await Review.find({});
+    const categories = await Category.find({});
+    const tags = await Tag.find({});
+    res.render("reviews", { reviews, categories, tags });
   }
 
-  static renderReview(req, res, next) {
+  static async renderReview(req, res, next) {
     const id = req.params.id;
-    var query = Review.where({ _id: id });
-    query
+    const review = await Review.where({ _id: id })
       .findOne()
       .populate(["categories", "tags"])
-      .exec((err, review) => {
-        if (err) return console.error(err);
-        if (review) {
-          console.log(review);
-          res.render("review", { review });
-        }
-      });
+      .exec();
+    res.render("review", { review });
   }
 
-  static addReview(req, res, next) {
+  static async addReview(req, res, next) {
     const title = req.body.title;
     const content = req.body.content;
     const categoryId = req.body.category;
@@ -43,26 +34,25 @@ class ReviewController {
       imageUrl
     });
 
-    Tag.find({ _id: tags }, (err, tags) => {
-      Category.findById(categoryId, (err, category) => {
-        reviewToAdd.categories.push(category);
-        category.reviews.push(reviewToAdd);
-        tags.forEach(tag => {
-          reviewToAdd.tags.push(tag);
-          tag.reviews.push(reviewToAdd);
-          tag.save((err, tag) => {
-            if (err) return console.error(err);
-          });
-        });
+    const tagToAdd = await Tag.find({ _id: tags });
+    const category = await Category.findById(categoryId);
+    reviewToAdd.categories.push(category);
+    category.reviews.push(reviewToAdd);
 
-        category.save((err, category) => {
-          if (err) return console.error(err);
-        });
+    tagToAdd.forEach(tag => {
+      reviewToAdd.tags.push(tags);
+      tag.reviews.push(reviewToAdd);
+      tagToAdd.save((err, tag) => {
+        if (err) return console.error(err);
+      });
 
-        reviewToAdd.save((error, reviewToAdd) => {
-          if (error) return console.error(error);
-          res.redirect("/reviews");
-        });
+      category.save((err, category) => {
+        if (err) return console.error(err);
+      });
+
+      reviewToAdd.save((error, reviewToAdd) => {
+        if (error) return console.error(error);
+        res.redirect("/reviews");
       });
     });
   }

@@ -8,6 +8,10 @@
 .AppleDouble
 .LSOverride
 
+#removing config files from git
+/node_modules/
+/src/server/config/
+
 # Icon must end with two \r
 Icon
 

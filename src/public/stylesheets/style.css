@@ -1,3 +1,6 @@
+/* font imports */
+@import url("https://fonts.googleapis.com/css?family=Comfortaa&display=swap");
+
 /* General styling and resets */
 
 * {
@@ -11,8 +14,8 @@ body {
 }
 
 html {
-  /* color: #666; */
   font: 20px/1 sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 
 img {
@@ -25,13 +28,26 @@ ul {
   list-style: none;
 }
 
+
 /* Layout styling */
 
 .form-container {
   background-image: url(../pictures/header-background.jpg);
-  display: flex;
+  padding-top: 2rem;
+  color: #FFFFFF;
   flex-direction: column;
   text-align: center;
+
+}
+
+.nav__menu__list a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.list a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 .layout__header {
@@ -51,6 +67,7 @@ ul {
 .grid-center {
   margin-left: 3rem;
   grid-area: center;
+  padding-left: 2rem;
 }
 
 .grid-right {
@@ -62,6 +79,8 @@ ul {
   display: inline-flex;
   padding-left: 1rem;
 }
+
+
 
 /* Reviews view styling */
 
@@ -80,15 +99,14 @@ ul {
   margin: 1rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   text-align: center;
 }
 
 .form {
   display: flex;
+  padding-top: 3rem;
   flex-direction: column;
-  max-width: 30%;
-  margin: 0 auto;
-  text-align: center;
 }
 
 select {
@@ -98,6 +116,8 @@ select {
 input {
   padding: 0.5rem;
   text-align: center;
+  border-radius: 0.25rem;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .tags {
@@ -105,6 +125,12 @@ input {
   color: #f7a1c4;
   width: 35%;
 }
+
+.add__label__tags{
+  padding-top: 2rem;
+}
+
+
 
 .tags:hover {
   color: orange;
@@ -137,10 +163,23 @@ input {
   padding-top: 1rem;
 }
 
+.review__title{
+  color: #FFFFFF;
+  font-weight: bold
+}
+
 .table__categories {
   border-collapse: collapse;
   width: 100%;
 }
+
+.submit__button{
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 5px 5px 5px grey;
+}
+
+
 
 th, td {
   text-align: left;

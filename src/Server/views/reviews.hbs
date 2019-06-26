@@ -3,7 +3,7 @@
       <form action="/reviews/add" method="POST" class="form-container">
          <label class="add__label"> Title </label><input class="input" maxlength="20" type="text" name="title" />
          <label class="add__label"> Image Url </label><input class="input" type="text" name="imageUrl" />
-         <label class="add__label">Category </label><select class="input" name="category">
+         <label class="add__label">Category </label><select class="select__dropdown" name="category">
             {{#each categories}}
             <option value="{{id}}">{{category}}</option>
             {{/each}}

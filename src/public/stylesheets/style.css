@@ -100,7 +100,6 @@ input {
   text-align: center;
 }
 
-
 .tags {
   /* display: inline-flex; */
   color: #f7a1c4;
@@ -115,7 +114,6 @@ input {
   color: white;
 }
 
-
 .tag__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -128,4 +126,31 @@ input {
   display: flex;
   padding: 1rem;
   justify-content: space-between;
+}
+
+/* Categories List */
+
+.list__categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.table__categories {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: lightblue
+}
+
+th {
+  color: white;
 }

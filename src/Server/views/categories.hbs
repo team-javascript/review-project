@@ -1,7 +1,7 @@
 <main>
     <form class="form" action="/categories/add" method="POST">
-        <label class="label__add-category">Category: <input class="input__add-list" type="text" name="category"></label>
-            <button class="submit__button">Add Category</button>
+        <label><input type="text" name="category" placeholder="Category"></label>
+            <button class="submit__button"> New Category </button>
     </form>
     <table class="table__categories">
         {{#each categories}}

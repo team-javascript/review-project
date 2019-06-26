@@ -12,4 +12,7 @@
          <li><a href="/tags/{{id}}">{{name}}</a></li>
         {{/each}}
     </ul>
+    <form action="/comment/add" method="POST" class="comment-form">
+    <label>Add a Comment!</label><input type="text" name="input">
+    </form>
 </main>

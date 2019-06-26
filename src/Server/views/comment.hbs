@@ -1,0 +1,11 @@
+<main>
+    <section class="comment-details">
+        <h1 class="comment__name">{{comment.comment}}</h1>
+        <ul class="comment__list">
+            {{#each comment.reviews}}
+            <li class="comment__list__item"><a href="/comments/{{_id}}">{{input}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+</main>

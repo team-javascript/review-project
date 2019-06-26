@@ -1,6 +1,6 @@
 /* font imports */
-@import url("https://fonts.googleapis.com/css?family=Comfortaa&display=swap");
 
+@import url("https://fonts.googleapis.com/css?family=Comfortaa&display=swap");
 /* General styling and resets */
 
 * {
@@ -27,7 +27,6 @@ img {
 ul {
   list-style: none;
 }
-
 
 /* Layout styling */
 
@@ -83,8 +82,6 @@ ul {
   padding-left: 1rem;
 }
 
-
-
 /* Reviews view styling */
 
 .list {
@@ -123,17 +120,22 @@ input {
   box-shadow: 5px 5px 5px grey;
 }
 
+.select__dropdown {
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  box-shadow: 5px 5px 5px grey;
+}
+
 .tags {
   /* display: inline-flex; */
   color: #f7a1c4;
   width: 35%;
 }
 
-.add__label__tags{
+.add__label__tags {
   padding-top: 2rem;
 }
-
-
 
 .tags:hover {
   color: white;
@@ -157,6 +159,10 @@ input {
   justify-content: space-between;
 }
 
+.home__button {
+  text-decoration: none;
+}
+
 /* Categories List */
 
 .lists__categories {
@@ -164,7 +170,7 @@ input {
   padding-top: 1rem;
 }
 
-.review__title{
+.review__title {
   color: #FFFFFF;
   font-weight: bold
 }
@@ -175,13 +181,11 @@ input {
   width: 100%;
 }
 
-.submit__button{
+.submit__button {
   margin-top: 1rem;
   border-radius: 0.25rem;
   box-shadow: 5px 5px 5px grey;
 }
-
-
 
 th, td {
   text-align: left;
@@ -198,7 +202,6 @@ th {
 
 .link__categories {
   text-decoration: none;
-  
 }
 
 .input__add-list {

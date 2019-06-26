@@ -11,6 +11,6 @@ router.get("/:id", ReviewController.renderReview);
 
 router.post("/add", ReviewController.addReview);
 
-router.post("/addComment", CommentController.addComment);
+router.post("/:id/addComment", CommentController.addComment);
 
 module.exports = router;

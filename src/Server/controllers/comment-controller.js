@@ -6,18 +6,19 @@ const Review = require("../models/Reviews/review");
 class CommentController {
   static addComment(req, res, next) {
     const comment = req.body.comment;
+    const reviewId = req.params.id;
 
-    const commentToAdd = new Comment({
-      comment
-    });
-
-    Review.findById(reviewId, (err, comment) => {
-      reviewId.comments.push(comment);
-      Comment.reviews.push(reviewId);
+    Review.findById(reviewId, (err, review) => {
+      const commentToAdd = new Comment({
+        input: comment,
+        review
+      });
+      review.comments.push(commentToAdd);
+      // commentToAdd.reviews.push(reviewId);
 
       commentToAdd.save((err, comment) => {
         if (err) return console.error(err);
-        res.redirect("/reviews");
+        res.redirect(`/reviews/${reviewId}`);
       });
     });
   }

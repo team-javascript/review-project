@@ -31,13 +31,16 @@ ul {
 
 /* Layout styling */
 
-.form-container {
+.reviews__wrapper{
   background-image: url(../pictures/header-background.jpg);
+  background-size: cover
+}
+
+.form-container {
   padding-top: 2rem;
   color: #FFFFFF;
   flex-direction: column;
   text-align: center;
-
 }
 
 .nav__menu__list a {

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const ReviewController = require("../controllers/review-controller");
+const CommentController = require("../controllers/comment-controller")
 /* GET reviews. */
 router.get("/", ReviewController.renderReviews);
 
@@ -9,5 +10,7 @@ router.get("/", ReviewController.renderReviews);
 router.get("/:id", ReviewController.renderReview);
 
 router.post("/add", ReviewController.addReview);
+
+router.post("/comment/add", CommentController.addComment);
 
 module.exports = router;

@@ -3,15 +3,14 @@ const mongoose = require("mongoose");
 const Review = require("../models/Reviews/review");
 const Category = require("../models/category/category");
 const Tag = require("../models/tag/tag");
-const Comment = require("../models/comments/comment")
+const Comment = require("../models/comments/comment");
 
 class ReviewController {
   static async renderReviews(req, res, next) {
     const reviews = await Review.find({});
     const categories = await Category.find({});
     const tags = await Tag.find({});
-    const comments = await Comment.find({});
-    res.render("reviews", { reviews, categories, tags, comments });
+    res.render("reviews", { reviews, categories, tags });
   }
 
   static async renderReview(req, res, next) {
@@ -29,15 +28,13 @@ class ReviewController {
     const categoryId = req.body.category;
     const imageUrl = req.body.imageUrl;
     const tags = req.body.tag;
-    const comments = req.body.comment;
 
     const reviewToAdd = new Review({
       title,
       content,
       imageUrl
     });
-    
-    Comment.find({_id: comments}, (err, comments) => {
+
     Tag.find({ _id: tags }, (err, tags) => {
       Category.findById(categoryId, (err, category) => {
         reviewToAdd.categories.push(category);
@@ -46,13 +43,6 @@ class ReviewController {
           reviewToAdd.tags.push(tag);
           tag.reviews.push(reviewToAdd);
           tag.save((err, tag) => {
-            if (err) return console.error(err);
-          });
-        });
-        comments.forEach(comment => {
-          reviewToAdd.comments.push(comment);
-          comment.reviews.push(reviewToAdd);
-          comment.save((err, comment) => {
             if (err) return console.error(err);
           });
         });
@@ -67,8 +57,7 @@ class ReviewController {
         });
       });
     });
-  });
-}
+  }
 }
 
 module.exports = ReviewController;

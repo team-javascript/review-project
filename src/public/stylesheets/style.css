@@ -42,9 +42,13 @@ ul {
   text-align: center;
 }
 
-.nav__menu__list a {
-  color: #FFFFFF;
+.nav__name {
+  color: white;
   text-decoration: none;
+}
+
+.nav__name:hover {
+  color: black;
 }
 
 .list a {

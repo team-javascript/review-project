@@ -28,7 +28,7 @@ app.use("/", homeRouter);
 app.use("/reviews", reviewsRouter);
 app.use("/categories", categoryRouter);
 app.use("/tags", tagRouter);
-
+app.use("/addComment", reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

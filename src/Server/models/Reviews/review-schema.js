@@ -6,7 +6,8 @@ module.exports = new mongoose.Schema({
   content: String,
   categories: [{type: mongoose.Schema.Types.ObjectId, ref: 'Category'}],
   imageUrl: String,
-  tags: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tag'}]
+  tags: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tag'}],
+  comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 });
 
 //Why is a new Schema being made both here and in the review.js?

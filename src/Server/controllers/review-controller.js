@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Review = require("../models/Reviews/review");
 const Category = require("../models/category/category");
 const Tag = require("../models/tag/tag");
+const Comment = require("../models/comments/comment");
 
 class ReviewController {
   static async renderReviews(req, res, next) {
@@ -16,7 +17,7 @@ class ReviewController {
     const id = req.params.id;
     const review = await Review.where({ _id: id })
       .findOne()
-      .populate(["categories", "tags"])
+      .populate(["categories", "tags", "comments"])
       .exec();
     res.render("review", { review });
   }
@@ -57,6 +58,24 @@ class ReviewController {
       });
     });
   }
+
+  // static addComment(req, res, next) {
+  //   const comment = req.body.comment;
+
+  //   const commentToAdd = new Comment({
+  //     comment
+  //   });
+
+  //   Review.findById(reviewId, (err, comment) => {
+  //     reviewId.comments.push(comment);
+  //     Comment.reviews.push(reviewId);
+
+  //     commentToAdd.save((err, comment) => {
+  //       if (err) return console.error(err);
+  //       res.redirect("/reviews");
+  //     });
+  //   });
+  // }
 }
 
 module.exports = ReviewController;

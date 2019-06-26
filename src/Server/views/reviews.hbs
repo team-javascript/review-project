@@ -2,20 +2,20 @@
    
       <form action="/reviews/add" method="POST" class="form-container">
          <label class="add__label"> Title </label><input class="input" maxlength="20" type="text" name="title" />
-         <label class="add__label"> Image Url</label><input class="input" type="text" name="imageUrl" />
-         <label class="add__label">Category:</label><select class="input" name="category">
+         <label class="add__label"> Image Url </label><input class="input" type="text" name="imageUrl" />
+         <label class="add__label">Category </label><select class="input" name="category">
             {{#each categories}}
             <option value="{{id}}">{{category}}</option>
             {{/each}}
          </select>
-         <label class="add__label">Content</label><input class="input" type="text" name="content" />
+         <label class="add__label">Content </label><input class="input" type="text" name="content" />
          <fieldset class="tags">
-            <legend class="add__label__tags">Tags:</legend>
+            <legend class="add__label__tags">Tags</legend>
             {{#each tags}}
             <label class="tag-boxes"><input type="checkbox" name="tag" value="{{id}}"> {{name}}</label>
             {{/each}}
          </fieldset>
-         <button type="review__submit">Add Meme</button>
+         <button class="submit__button" type="review__submit">Add Meme</button>
       </form>
    
    <ul class="list">

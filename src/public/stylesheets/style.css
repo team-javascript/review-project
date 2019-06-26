@@ -154,6 +154,10 @@ input {
   justify-content: space-between;
 }
 
+.home__button {
+  text-decoration: none;
+}
+
 /* Categories List */
 
 .lists__categories {

@@ -130,14 +130,13 @@ input {
 
 /* Categories List */
 
-.list__categories {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.lists__categories {
   margin-bottom: 1rem;
   padding-top: 1rem;
 }
 
 .table__categories {
+  text-decoration: none;
   border-collapse: collapse;
   width: 100%;
 }
@@ -147,10 +146,42 @@ th, td {
   padding: 8px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
   background-color: lightblue
 }
 
 th {
+  color: white;
+}
+
+.link__categories {
+  text-decoration: none;
+  
+}
+
+.input__add-list {
+  background-color: rgb(235, 235, 235);
+  margin-top: 1rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.submit__button {
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  background-color: lightblue;
+  color: darkblue;
+  width: 100px;
+}
+
+.label__add-category {
   color: white;
 }

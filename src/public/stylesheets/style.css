@@ -27,6 +27,11 @@ ul {
   list-style: none;
 }
 
+.category__list__item {
+  text-align: center;
+}
+
+\
 /* Layout styling */
 .rating__status {
   text-align: center;
@@ -98,6 +103,10 @@ ul {
   margin-left: 3rem;
   grid-area: center;
   padding-left: 2rem;
+}
+
+.grid-center__image {
+  width: 8vw;
 }
 
 .grid-right {
@@ -297,6 +306,12 @@ th {
 }
 
 .reviews__image {
+  height: 50vh;
+  margin: 1rem;
+  overflow: scroll;
+}
+
+.category__image {
   height: 50vh;
   margin: 1rem;
 }

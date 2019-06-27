@@ -7,10 +7,11 @@ var logger = require("morgan");
 var homeRouter = require("./src/Server/routes/home-router");
 var reviewsRouter = require("./src/Server/routes/reviews-router");
 var categoryRouter = require("./src/Server/routes/category-router");
+var tagRouter = require("./src/Server/routes/tag-router");
 
 var app = express();
 
-require("./src/server/models/db")
+require("./src/server/models/db");
 
 // view engine setup
 app.set("views", path.join(__dirname, "./src/Server/views"));
@@ -26,8 +27,8 @@ app.use(express.static(path.join(__dirname, "src/public")));
 app.use("/", homeRouter);
 app.use("/reviews", reviewsRouter);
 app.use("/categories", categoryRouter);
-
-// app.use("/add", addRouter);
+app.use("/tags", tagRouter);
+app.use("/addComment", reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

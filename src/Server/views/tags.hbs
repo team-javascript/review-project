@@ -1,0 +1,14 @@
+<main>
+    <form class="form" action="/tags/add" method="POST">
+        
+        <label> <input type="text" name="name" placeholder="Hashtag"></label>
+        <button class="submit__button">New Hashtag</button>
+    </form>
+    <ul class="list">
+        {{#each tags}}
+        <li class="list__item">
+            <a href="/tags/{{id}}"><div>{{name}}</div></a>
+        </li>
+        {{/each}}
+    </ul>
+</main>

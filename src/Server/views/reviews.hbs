@@ -1,27 +1,33 @@
 <main>
-   <ul class="reviews__meme__cards">
-      <form action="/reviews/add" method="POST">
-         Title <input type="text" name="title" />
-         Image Url<input type="text" name="imageUrl" />
-         <label>
-            Category:
-            <select name="category">
-               {{#each categories}}
-               <option value="{{id}}">{{category}}</option>
-               {{/each}}
-            </select>
-         </label>
-         Content<input type="text" name="content" />
-         <button type="submit">Add Meme</button>
+   <div class="reviews__wrapper">
+      <form action="/reviews/add" method="POST" class="form-container">
+         <label class="add__label"> Title </label><input class="input" maxlength="20" type="text" name="title" />
+         <label class="add__label"> Image Url </label><input class="input" type="text" name="imageUrl" />
+         <label class="add__label">Category </label><select class="select__dropdown" name="category">
+            {{#each categories}}
+            <option value="{{id}}">{{category}}</option>
+            {{/each}}
+         </select>
+         <label class="add__label">Content </label><input class="input" type="text" name="content" />
+         <fieldset class="tags">
+            <legend class="add__label__tags">Tags</legend>
+            {{#each tags}}
+            <label class="tag-boxes"><input class="none" type="checkbox" name="tag" value="{{id}}"> {{name}}</label>
+            {{/each}}
+         </fieldset>
+         <button class="submit__button" type="review__submit">Add Meme</button>
       </form>
-      <ul class="meme__cards">
-         {{#each reviews}}
-         <li class="reviews__meme__card">
-            <figure class="reviews__meme__fegure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
+   
+   <ul class="list">
+      {{#each reviews}}
+      <li class="list__item">
+         <div class = "review__title" >{{title}}</div>
+         <a href="/reviews/{{id}}">
+            <figure class="reviews__meme__figure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
             </figure>
-            <a class="reviews__meme__link" href="/reviews/{{id}}">{{title}}</a>
-         </li>
-         {{/each}}
-      </ul>
-      </nav>
+         </a>
+      </li>
+      {{/each}}
+   </ul>
+   </div>
 </main>

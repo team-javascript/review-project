@@ -1,9 +1,9 @@
 <main>
     <section class="category-details">
-        <h1>{{category.category}}</h1>
-        <ul>
+        <h1 class="category__name">{{category.category}}</h1>
+        <ul class="category__list">
             {{#each category.reviews}}
-            <li><a href="/reviews/{{_id}}"> {{title}}</a>
+            <li class="category__list__item"><a href="/reviews/{{_id}}">{{title}}</a>
             </li>
             {{/each}}
         </ul>

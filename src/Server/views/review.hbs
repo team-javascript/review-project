@@ -17,16 +17,7 @@
         <label>Who are you?</label><input type="text" name="author">
         <button>Submit Comment</button>
     </form>
-    <section class="review-comments">
-        {{#each review.comments}}
-        <ul>
-            <li>Author: {{author}}</li>
-            <li>Comment: {{input}}</li>
-        </ul>
-        {{/each}}
-    </section>
-
-    <section>
+    <section class="rating__button">
         <h3 class="rating__status">Rating: {{review.rating}}</h3>
         <form action="/reviews/{{review.id}}/increaseRating">
             <button class="rating__increase"><img class="thumbs" src="/pictures/Thumbs_up_final.png"
@@ -37,4 +28,14 @@
                     alt="Thumbs Down"></button>
         </form>
     </section>
+    <section class="review-comments">
+        {{#each review.comments}}
+        <ul>
+            <li>Author: {{author}}</li>
+            <li>Comment: {{input}}</li>
+        </ul>
+        {{/each}}
+    </section>
+
+    
 </main>

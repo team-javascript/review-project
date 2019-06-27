@@ -13,6 +13,10 @@ body {
   background-color: cornflowerblue;
 }
 
+button{
+  background-color: cornFlowerblue;
+}
+
 html {
   font: 20px/1 sans-serif;
   font-family: "Comfortaa", cursive;
@@ -34,6 +38,8 @@ ul {
   background-image: url(../pictures/header-background.jpg);
   background-size: cover;
 }
+
+
 
 .form-container {
   padding-top: 2rem;
@@ -193,6 +199,13 @@ input {
   margin-top: 1rem;
   border-radius: 0.25rem;
   box-shadow: 5px 5px 5px grey;
+}
+
+.rating__button{
+  display: inline-flex;
+  margin: 1rem;
+  /* padding-top: 2rem;
+  padding-bottom: 2rem; */
 }
 
 th,

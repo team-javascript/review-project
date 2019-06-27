@@ -316,7 +316,6 @@ th {
 }
 
 .review__container {
-  overflow: scroll;
   max-width: 100%;
   overflow-y: hidden;
 }

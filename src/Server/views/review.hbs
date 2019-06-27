@@ -9,7 +9,20 @@
         {{/each}}
         <li class="review__card__content">Content: {{review.content}}</li>
         {{#each review.tags}}
-         <li><a href="/tags/{{id}}">{{name}}</a></li>
+        <li><a href="/tags/{{id}}">{{name}}</a></li>
         {{/each}}
     </ul>
+    <form action="/reviews/{{review.id}}/addComment" method="POST" class="comment-form">
+        <label>Add a Comment!</label><input type="text" name="comment">
+        <label>Who are you?</label><input type="text" name="author">
+        <button>Submit Comment</button>
+    </form>
+    <section class="review-comments">
+        {{#each review.comments}}
+        <ul>
+            <li>Author: {{author}}</li>
+            <li>Comment: {{input}}</li>
+        </ul>
+        {{/each}}
+    </section>
 </main>

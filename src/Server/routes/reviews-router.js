@@ -13,4 +13,8 @@ router.post("/add", ReviewController.addReview);
 
 router.post("/:id/addComment", CommentController.addComment);
 
+router.get("/:id/increaseRating", ReviewController.increaseRating  )
+
+router.get("/:id/decreaseRating", ReviewController.decreaseRating)
+
 module.exports = router;

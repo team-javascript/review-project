@@ -177,6 +177,12 @@ input {
   padding-top: 1rem;
 }
 
+
+.review__title {
+  color: #FFFFFF;
+  font-weight: bold
+}
+
 .table__categories {
   text-decoration: none;
   border-collapse: collapse;
@@ -228,6 +234,10 @@ th {
   -moz-border-radius: ;
   -ms-border-radius: ;
   -o-border-radius: ;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
   background-color: lightblue;
   color: darkblue;
   width: 100px;
@@ -257,4 +267,5 @@ th {
   margin-top: 15px;
   margin-bottom: 15px;
   vertical-align: middle;
+}
 }

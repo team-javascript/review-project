@@ -30,4 +30,16 @@
             {{/each}}
          </ul>
       </div>
+   <ul class="list">
+      {{#each reviews}}
+      <li class="list__item">
+         <div class = "review__title" >{{title}}</div>
+         <a href="/reviews/{{id}}">
+            <figure class="reviews__meme__figure"><img class="reviews__meme__image" src="{{imageUrl}}" alt="{{title}}">
+            </figure>
+         </a>
+      </li>
+      {{/each}}
+   </ul>
+   </div>
 </main>

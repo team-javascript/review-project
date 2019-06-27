@@ -17,17 +17,17 @@
          </fieldset>
          <button class="submit__button" type="review__submit">Add Meme</button>
       </form>
-   
-   <ul class="row">
-      {{#each reviews}}
-      <li class="column">
-         {{!-- <div class = "review__title" >{{title}}</div> --}}
-         <a href="/reviews/{{id}}">
-            <figure class="reviews__figure"><img class="reviews__image" src="{{imageUrl}}" alt="{{title}}">
-            </figure>
-         </a>
-      </li>
-      {{/each}}
-   </ul>
-   </div>
+      <div class="review__container">
+         <ul class="row">
+            {{#each reviews}}
+            <li class="column">
+               {{!-- <div class = "review__title" >{{title}}</div> --}}
+               <a href="/reviews/{{id}}">
+                  <figure class="reviews__figure"><img class="reviews__image" src="{{imageUrl}}" alt="{{title}}">
+                  </figure>
+               </a>
+            </li>
+            {{/each}}
+         </ul>
+      </div>
 </main>

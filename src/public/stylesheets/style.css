@@ -19,9 +19,8 @@ html {
 }
 
 img {
-  margin: 1rem;
-  width: 25vw;
-  height: 30vh;
+  max-width: auto;
+  height: 50vh;
 }
 
 ul {
@@ -178,6 +177,7 @@ input {
   padding-top: 1rem;
 }
 
+
 .review__title {
   color: #FFFFFF;
   font-weight: bold
@@ -193,6 +193,10 @@ input {
   margin-top: 1rem;
   border-radius: 0.25rem;
   box-shadow: 5px 5px 5px grey;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
 }
 
 th, td {
@@ -226,6 +230,10 @@ th {
 .submit__button {
   margin-bottom: 1rem;
   border-radius: 1rem;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
@@ -237,4 +245,27 @@ th {
 
 .label__add-category {
   color: white;
+}
+
+/* Reviews */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 0 4px; */
+}
+
+/* Create four equal columns that sits next to each other */
+
+.column {
+  flex: 25%;
+  max-width: auto;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  vertical-align: middle;
+}
 }

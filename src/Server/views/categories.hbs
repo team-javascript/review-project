@@ -1,13 +1,13 @@
 <main>
     <form class="form" action="/categories/add" method="POST">
-        <label>Category: <input type="text" name="category"></label>
-            <button class="submit__button">Submit</button>
+        <label><input type="text" name="category" placeholder="Category"></label>
+            <button class="submit__button"> New Category </button>
     </form>
-    <ul class="list">
+    <table class="table__categories">
         {{#each categories}}
-        <li class="list__item">
-            <a href="/categories/{{_id}}">{{category}}</a>
-        </li>
+        <tr class="lists__categories">
+            <th><a class="link__categories" href="/categories/{{_id}}">{{category}}</a></th>
+        </tr>
         {{/each}}
-    </ul>
+    <table>
 </main>

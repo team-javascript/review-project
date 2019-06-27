@@ -7,13 +7,14 @@
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
+  /* border: 1px, solid red; */
 }
 
 body {
   background-color: cornflowerblue;
 }
 
-button{
+button {
   background-color: cornFlowerblue;
 }
 
@@ -22,23 +23,41 @@ html {
   font-family: "Comfortaa", cursive;
 }
 
-img {
-  max-width: auto;
-  height: 30vh;
-}
-
 ul {
   list-style: none;
 }
 
 /* Layout styling */
-
+.rating__status {
+  text-align: center;
+}
 .reviews__wrapper {
   background-image: url(../pictures/header-background.jpg);
   background-size: cover;
 }
 
+.review__wrapper {
+  text-align: center;
+}
 
+/* .review__card__list {
+  float: right;
+} */
+
+.review-flex {
+  display: flex;
+}
+
+.review-details {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.review__card__list__tags {
+  display: flex;
+  padding-top: 2rem;
+}
 
 .form-container {
   padding-top: 2rem;
@@ -183,7 +202,6 @@ input {
   padding-top: 1rem;
 }
 
-
 .review__title {
   color: #ffffff;
   font-weight: bold;
@@ -205,7 +223,7 @@ input {
   -o-border-radius: ;
 }
 
-.rating__button{
+.rating__button {
   display: inline-flex;
   margin: 1rem;
   /* padding-top: 2rem;
@@ -272,21 +290,34 @@ th {
   /* padding: 0 4px; */
 }
 
-.review__container{
+.review__container {
   overflow: scroll;
   max-width: 100%;
   overflow-y: hidden;
 }
 
-.reviews__image{
+.reviews__image {
   height: 50vh;
-  margin: 1rem; 
+  margin: 1rem;
 }
 
 /* Create four equal columns that sits next to each other */
 
+/* single review */
 
+.review__image {
+  margin-top: 3rem;
+  max-height: 35rem;
+}
 
+/* Comment form */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
 
+/* comment block */
 
-
+.review-comments {
+  border: ;
+}

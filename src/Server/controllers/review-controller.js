@@ -59,23 +59,29 @@ class ReviewController {
     });
   }
 
-  // static addComment(req, res, next) {
-  //   const comment = req.body.comment;
+  static async increaseRating(req, res, next) {
+    const id = req.params.id;
+    const review = await Review.findOne({ _id: id });
 
-  //   const commentToAdd = new Comment({
-  //     comment
-  //   });
+    review.rating++;
 
-  //   Review.findById(reviewId, (err, comment) => {
-  //     reviewId.comments.push(comment);
-  //     Comment.reviews.push(reviewId);
+    review.save((err, review) => {
+      if (err) console.error(err);
+      res.redirect(`/reviews/${id}`);
+    });
+  }
 
-  //     commentToAdd.save((err, comment) => {
-  //       if (err) return console.error(err);
-  //       res.redirect("/reviews");
-  //     });
-  //   });
-  // }
+  static async decreaseRating(req, res, next) {
+    const id = req.params.id;
+    const review = await Review.findOne({ _id: id });
+
+    review.rating--;
+
+    review.save((err, review) => {
+      if (err) console.error(err);
+      res.redirect(`/reviews/${id}`);
+    });
+  }
 }
 
 module.exports = ReviewController;

@@ -25,4 +25,14 @@
         </ul>
         {{/each}}
     </section>
+
+    <section>
+        <h3 class="rating__status">Rating: {{review.rating}}</h3>
+        <form action="/reviews/{{review.id}}/increaseRating">
+            <button class="rating__increase">+</button>
+        </form>
+        <form action="/reviews/{{review.id}}/decreaseRating">
+            <button class="rating__decrease">+</button>
+        </form>
+    </section>
 </main>

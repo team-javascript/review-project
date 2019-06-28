@@ -1,9 +1,11 @@
 <main>
-    <section class="category-details">
+    <section class="column">
         <h1 class="category__name">{{category.category}}</h1>
-        <ul class="category__list">
+        <ul class="row">
+
             {{#each category.reviews}}
-            <li class="category__list__item"><a href="/reviews/{{_id}}">{{title}}</a>
+            <li class="category__list__item"><a class="category__list__name" href="/reviews/{{_id}}">{{title}}<img
+                        class="reviews__image" src="{{imageUrl}}"></a>
             </li>
             {{/each}}
         </ul>

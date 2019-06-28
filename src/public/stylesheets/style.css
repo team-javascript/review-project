@@ -7,10 +7,15 @@
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
+  /* border: 1px, solid red; */
 }
 
 body {
   background-color: cornflowerblue;
+}
+
+button {
+  background-color: cornFlowerblue;
 }
 
 html {
@@ -18,26 +23,55 @@ html {
   font-family: "Comfortaa", cursive;
 }
 
-img {
-  margin: 1rem;
-  max-width: 25vw;
-  height: 50vh;
-}
-
 ul {
   list-style: none;
 }
 
-/* Layout styling */
+.category__list__item {
+  text-align: center;
+}
+.row {
+  text-decoration: none;
+  overflow: scroll;
+  overflow-y: hidden;
+  padding-bottom: 16vh;
+}
 
+/* Layout styling */
+.rating__status {
+  text-align: center;
+}
 .reviews__wrapper {
   background-image: url(../pictures/header-background.jpg);
-  background-size: cover
+  background-size: cover;
+}
+
+.review__wrapper {
+  text-align: center;
+}
+
+/* .review__card__list {
+  float: right;
+} */
+
+.review-flex {
+  display: flex;
+}
+
+.review-details {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.review__card__list__tags {
+  display: flex;
+  padding-top: 2rem;
 }
 
 .form-container {
   padding-top: 2rem;
-  color: #FFFFFF;
+  color: #ffffff;
   flex-direction: column;
   text-align: center;
 }
@@ -52,7 +86,7 @@ ul {
 }
 
 .list a {
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -64,6 +98,9 @@ ul {
   width: 100%;
   background-color: #f7a1c4;
   align-items: center;
+  /* position: absolute;
+  top: 0;
+  width: 100%; */
 }
 
 .grid-left {
@@ -76,6 +113,10 @@ ul {
   padding-left: 2rem;
 }
 
+.grid-center__image {
+  width: 8vw;
+}
+
 .grid-right {
   grid-area: right;
   margin-right: 3rem;
@@ -84,6 +125,11 @@ ul {
 .nav__menu__list__item {
   display: inline-flex;
   padding-left: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Reviews view styling */
@@ -160,11 +206,14 @@ input {
   margin-left: 16rem;
 }
 
-.layout__footer {
+footer {
   background-color: #f7a1c4;
   display: flex;
   padding: 1rem;
   justify-content: space-between;
+  /* position: fixed; */
+  /* bottom: 0;
+  width: 100%; */
 }
 
 .home__button {
@@ -179,8 +228,8 @@ input {
 }
 
 .review__title {
-  color: #FFFFFF;
-  font-weight: bold
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .table__categories {
@@ -193,15 +242,27 @@ input {
   margin-top: 1rem;
   border-radius: 0.25rem;
   box-shadow: 5px 5px 5px grey;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
 }
 
-th, td {
+.rating__button {
+  display: inline-flex;
+  margin: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+th,
+td {
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(odd) {
-  background-color: lightblue
+  background-color: lightblue;
 }
 
 th {
@@ -226,6 +287,10 @@ th {
 .submit__button {
   margin-bottom: 1rem;
   border-radius: 1rem;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
@@ -237,4 +302,73 @@ th {
 
 .label__add-category {
   color: white;
+}
+
+.thumbs {
+  max-width: 3rem;
+  height: 3rem;
+}
+/* Reviews */
+
+.row {
+  display: flex;
+  /* padding: 0 4px; */
+}
+
+.review__container {
+  max-width: 100%;
+  overflow-y: hidden;
+}
+
+.reviews__image {
+  height: 50vh;
+  margin: 1rem;
+  overflow: scroll;
+}
+
+.category__image {
+  height: 50vh;
+  margin: 1rem;
+}
+
+.category__name {
+  text-align: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+/* Create four equal columns that sits next to each other */
+
+/* single review */
+
+.review__image {
+  margin-top: 3rem;
+  height: 32rem;
+}
+
+/* Comment form */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* comment block */
+
+.review-comments {
+  margin-bottom: 2rem;
+  display: inline-block;
+  border: 1px solid #383f46;
+  border-radius: 10px;
+  box-shadow: 3px 6px #414141;
+}
+
+.review-comments__author {
+  padding-bottom: 0.5rem;
+  padding-top: 0.3rem;
+  border-bottom: 2px solid #708090;
+}
+
+.review-comments__comment {
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
 }

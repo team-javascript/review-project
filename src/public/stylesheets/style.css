@@ -357,7 +357,18 @@ th {
 .review-comments {
   margin-bottom: 2rem;
   display: inline-block;
-  border: 1px solid #708090;
+  border: 1px solid #383f46;
   border-radius: 10px;
-  box-shadow: 3px 6px #696969;
+  box-shadow: 3px 6px #414141;
+}
+
+.review-comments__author {
+  padding-bottom: 0.5rem;
+  padding-top: 0.3rem;
+  border-bottom: 2px solid #708090;
+}
+
+.review-comments__comment {
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
 }

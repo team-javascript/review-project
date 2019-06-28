@@ -5,7 +5,7 @@
 // const app = require("../../../app");
 
 // describe("Comments router/controller", () => {
-//   test("Should successfully connect to '/comments' ", done => {
+//   test("Should successfully connect to '/review' ", done => {
 //     //Arrange
 //     request(app)
 //       .get("/comments")

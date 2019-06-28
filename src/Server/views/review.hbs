@@ -33,13 +33,13 @@
         <form action="/reviews/{{review.id}}/addComment" method="POST" class="comment-form">
             <label>Who are you?</label><input type="text" name="author">
             <label>Add a Comment!</label><input type="text" name="comment">
-            <button>Submit Comment</button>
+            <button class="submit__button">Submit Comment</button>
         </form>
         <section class="review-comments">
             {{#each review.comments}}
             <ul>
-                <li>Author: {{author}}</li>
-                <li>Comment: {{input}}</li>
+                <li class="review-comments__author">Author: {{author}}</li>
+                <li class="review-comments__comment">Comment: {{input}}</li>
             </ul>
             {{/each}}
         </section>

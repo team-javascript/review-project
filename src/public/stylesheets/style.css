@@ -343,7 +343,7 @@ th {
 
 .review__image {
   margin-top: 3rem;
-  max-height: 35rem;
+  height: 32rem;
 }
 
 /* Comment form */
@@ -356,4 +356,8 @@ th {
 
 .review-comments {
   margin-bottom: 2rem;
+  display: inline-block;
+  border: 1px solid #708090;
+  border-radius: 10px;
+  box-shadow: 3px 6px #696969;
 }
